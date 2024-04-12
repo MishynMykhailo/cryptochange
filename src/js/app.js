@@ -536,6 +536,8 @@ class CryptoList {
     this.typeGiveArray = null;
     this.receiveArray = [];
     this.typeReceiveArray = null;
+    this.searchGiveInput = "";
+    this.searchReceiveInput = "";
     this.listGiveElem = document.getElementById(idGiveElem);
     this.listReceiveElem = document.getElementById(idReceiveElem);
     this.renderItems();
@@ -550,7 +552,7 @@ class CryptoList {
     const itemName = document.createElement("p");
     itemName.classList.add(classText);
     itemName.textContent = itemData.name;
-    img.src = `./images/${itemData.className}.svg`; // Изменено здесь
+    img.src = `./images/${itemData.className}.svg`;
     li.appendChild(img);
     li.appendChild(itemName);
     return li;
@@ -584,22 +586,52 @@ class CryptoList {
     });
   }
 
-  filterItems(typeArray, listElem) {
+  filterAndSearchItems(typeArray, searchString, listElem) {
     const listItems = listElem.querySelectorAll("li");
-
+const notFoundMessage = document.getElementById("not-found-message");
     listItems.forEach((item) => {
       const itemType = item.getAttribute("data-type");
-      if (typeArray === null || typeArray === Number(itemType)) {
+      const itemNameElement = item.querySelector(
+        ".give-currency__block-list__item-text"
+      );
+  
+      const itemName = itemNameElement
+        ? itemNameElement.textContent.toLowerCase()
+        : "";
+
+      const typeMatch = typeArray === null || typeArray === Number(itemType);
+      const nameMatch = itemName.includes(searchString);
+
+      if (typeMatch && nameMatch) {
         item.style.display = "flex";
       } else {
         item.style.display = "none";
       }
     });
+    let foundItems = false;
+    listItems.forEach((item) => {
+      if (item.style.display !== "none") {
+        foundItems = true;
+      }
+    });
+
+    if (!foundItems) {
+      notFoundMessage.style.display = "block";
+    } else {
+      notFoundMessage.style.display = "none";
+    }
   }
 
-  handlerFilter({ idGiveFilter, idReceiveFilter }) {
+  handlerFilter({
+    idGiveFilter,
+    idReceiveFilter,
+    idGiveSearchFilter,
+    idReceiveSearchFilter,
+  }) {
     const giveFilter = document.getElementById(idGiveFilter);
     const receiveFilter = document.getElementById(idReceiveFilter);
+    const giveSearchFilter = document.getElementById(idGiveSearchFilter);
+    const receiveSearchFilter = document.getElementById(idReceiveSearchFilter);
 
     giveFilter.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
@@ -619,7 +651,11 @@ class CryptoList {
         default:
           return;
       }
-      this.filterItems(this.typeGiveArray, this.listGiveElem);
+      this.filterAndSearchItems(
+        this.typeGiveArray,
+        this.searchGiveInput,
+        this.listGiveElem
+      );
     });
 
     receiveFilter.addEventListener("click", (e) => {
@@ -640,37 +676,29 @@ class CryptoList {
         default:
           return;
       }
-      this.filterItems(this.typeReceiveArray, this.listReceiveElem);
+      this.filterAndSearchItems(
+        this.typeReceiveArray,
+        this.searchReceiveInput,
+        this.listReceiveElem
+      );
     });
-  }
-  searchFilter({ idGiveSearchFilter, idReceiveSearchFilter }) {
-    const giveSearchFilter = document.getElementById(idGiveSearchFilter);
-    const receiveSearchFilter = document.getElementById(idReceiveSearchFilter);
 
     giveSearchFilter.addEventListener("input", (e) => {
-      const searchString = e.target.value.toLowerCase();
-      this.filterItems(this.typeGiveArray, this.listGiveElem);
-      this.searchItems(searchString, this.listGiveElem);
+      this.searchGiveInput = e.target.value.toLowerCase();
+      this.filterAndSearchItems(
+        this.typeGiveArray,
+        this.searchGiveInput,
+        this.listGiveElem
+      );
     });
 
     receiveSearchFilter.addEventListener("input", (e) => {
-      const searchString = e.target.value.toLowerCase();
-      this.filterItems(this.typeReceiveArray, this.listReceiveElem);
-      this.searchItems(searchString, this.listReceiveElem);
-    });
-  }
-  searchItems(searchString, listElem) {
-    const listItems = listElem.querySelectorAll("li");
-
-    listItems.forEach((item) => {
-      const itemName = item
-        .querySelector(".give-currency__block-list__item-text")
-        .textContent.toLowerCase();
-      if (itemName.includes(searchString)) {
-        item.style.display = "flex";
-      } else {
-        item.style.display = "none";
-      }
+      this.searchReceiveInput = e.target.value.toLowerCase();
+      this.filterAndSearchItems(
+        this.typeReceiveArray,
+        this.searchReceiveInput,
+        this.listReceiveElem
+      );
     });
   }
 }
@@ -680,8 +708,6 @@ const cryptoList = new CryptoList(data, "give-list", "receive-list");
 cryptoList.handlerFilter({
   idGiveFilter: "give-filter",
   idReceiveFilter: "receive-filter",
-});
-cryptoList.searchFilter({
   idGiveSearchFilter: "give-search-filter",
   idReceiveSearchFilter: "receive-search-filter",
 });
