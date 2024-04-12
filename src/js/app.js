@@ -538,28 +538,65 @@ class CryptoList {
     this.typeReceiveArray = null;
     this.listGiveElem = document.getElementById(idGiveElem);
     this.listReceiveElem = document.getElementById(idReceiveElem);
+    this.renderItems();
   }
-  createItems({ classLi, classImg, classText, type }) {
-    const listElem = type === "give" ? this.listGiveElem : this.listReceiveElem;
-    const array = type === "give" ? this.giveArray : this.receiveArray;
-    for (let i = 0; i < this.data.length; i += 1) {
-      const li = document.createElement("li");
-      li.setAttribute('data-type',this.data[i].type)
-      li.classList.add(classLi);
-      const img = document.createElement("img");
-      img.classList.add(classImg);
-      const itemName = document.createElement("p");
-      itemName.classList.add(classText);
-      itemName.textContent = this.data[i].name;
-      img.src = `./images/${this.data[i].className}.svg`; // Изменено здесь
-      li.appendChild(img);
-      li.appendChild(itemName);
 
-      array.push(li);
-    }
-    listElem.append(...array);
+  createItem({ classLi, classImg, classText }, itemData) {
+    const li = document.createElement("li");
+    li.setAttribute("data-type", itemData.type);
+    li.classList.add(classLi);
+    const img = document.createElement("img");
+    img.classList.add(classImg);
+    const itemName = document.createElement("p");
+    itemName.classList.add(classText);
+    itemName.textContent = itemData.name;
+    img.src = `./images/${itemData.className}.svg`; // Изменено здесь
+    li.appendChild(img);
+    li.appendChild(itemName);
+    return li;
   }
-  // give-filter , receive-filter
+
+  renderItems() {
+    this.giveArray = [];
+    this.receiveArray = [];
+    this.data.forEach((item) => {
+      const newItem = this.createItem(
+        {
+          classLi: "give-currency__block-list__item",
+          classImg: "give-currency__block-list__item-img",
+          classText: "give-currency__block-list__item-text",
+        },
+        item
+      );
+      this.giveArray.push(newItem);
+      this.listGiveElem.appendChild(newItem);
+
+      const newItem2 = this.createItem(
+        {
+          classLi: "receive-currency__block-list__item",
+          classImg: "receive-currency__block-list__item-img",
+          classText: "receive-currency__block-list__item-text",
+        },
+        item
+      );
+      this.receiveArray.push(newItem2);
+      this.listReceiveElem.appendChild(newItem2);
+    });
+  }
+
+  filterItems(typeArray, listElem) {
+    const listItems = listElem.querySelectorAll("li");
+
+    listItems.forEach((item) => {
+      const itemType = item.getAttribute("data-type");
+      if (typeArray === null || typeArray === Number(itemType)) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
   handlerFilter({ idGiveFilter, idReceiveFilter }) {
     const giveFilter = document.getElementById(idGiveFilter);
     const receiveFilter = document.getElementById(idReceiveFilter);
@@ -582,7 +619,9 @@ class CryptoList {
         default:
           return;
       }
+      this.filterItems(this.typeGiveArray, this.listGiveElem);
     });
+
     receiveFilter.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
       switch (id) {
@@ -601,24 +640,48 @@ class CryptoList {
         default:
           return;
       }
+      this.filterItems(this.typeReceiveArray, this.listReceiveElem);
+    });
+  }
+  searchFilter({ idGiveSearchFilter, idReceiveSearchFilter }) {
+    const giveSearchFilter = document.getElementById(idGiveSearchFilter);
+    const receiveSearchFilter = document.getElementById(idReceiveSearchFilter);
+
+    giveSearchFilter.addEventListener("input", (e) => {
+      const searchString = e.target.value.toLowerCase();
+      this.filterItems(this.typeGiveArray, this.listGiveElem);
+      this.searchItems(searchString, this.listGiveElem);
+    });
+
+    receiveSearchFilter.addEventListener("input", (e) => {
+      const searchString = e.target.value.toLowerCase();
+      this.filterItems(this.typeReceiveArray, this.listReceiveElem);
+      this.searchItems(searchString, this.listReceiveElem);
+    });
+  }
+  searchItems(searchString, listElem) {
+    const listItems = listElem.querySelectorAll("li");
+
+    listItems.forEach((item) => {
+      const itemName = item
+        .querySelector(".give-currency__block-list__item-text")
+        .textContent.toLowerCase();
+      if (itemName.includes(searchString)) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
     });
   }
 }
-const cryptoList = new CryptoList(data, "give-list", "receive-list"); // Изменено
 
-cryptoList.createItems({
-  classLi: "give-currency__block-list__item",
-  classImg: "give-currency__block-list__item-img",
-  classText: "give-currency__block-list__item-text",
-  type: "give",
-});
-cryptoList.createItems({
-  classLi: "receive-currency__block-list__item",
-  classImg: "receive-currency__block-list__item-img",
-  classText: "receive-currency__block-list__item-text",
-  type: "receive",
-});
+const cryptoList = new CryptoList(data, "give-list", "receive-list");
+
 cryptoList.handlerFilter({
   idGiveFilter: "give-filter",
   idReceiveFilter: "receive-filter",
+});
+cryptoList.searchFilter({
+  idGiveSearchFilter: "give-search-filter",
+  idReceiveSearchFilter: "receive-search-filter",
 });
