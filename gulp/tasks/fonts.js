@@ -34,6 +34,8 @@ export function ttfToWoff() {
     .pipe(gulp.dest(`${path.build.fonts}`))
     .pipe(gulp.src(`${path.srcFolder}/fonts/*.ttf`))
     .pipe(ttf2woff2())
+    .pipe(gulp.dest(`${path.build.fonts}`))
+    .pipe(gulp.src(`${path.srcFolder}/fonts/*.{woff,woff2}`))
     .pipe(gulp.dest(`${path.build.fonts}`));
 }
 export function fontsStyle() {

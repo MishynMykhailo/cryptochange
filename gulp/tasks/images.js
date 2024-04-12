@@ -21,7 +21,7 @@ export function images() {
     .pipe(plugins.newer(path.build.images))
     .pipe(minifyImages())
     .pipe(gulp.dest(path.build.images))
-    .pipe(webp())
+    // .pipe(webp())
     .pipe(gulp.dest(path.build.images))
     .pipe(gulp.src(path.src.svg))
     .pipe(gulp.dest(path.build.images))

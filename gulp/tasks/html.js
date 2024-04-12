@@ -4,7 +4,7 @@ import { path } from "../config/path.js";
 import { plugins } from "../config/plugins.js";
 import { listRegExpHtml } from "../helpers/helpers.js";
 import gulpWebpHtmlNosvg from "../helpers/gulp-webp-html-nosvg/index.js";
-import versionNumber from "gulp-version-number";
+// import versionNumber from "gulp-version-number";
 import { handlerErrors } from "../helpers/handleErrors.js";
 // Function for copy-html files from "srcFolder" to "buildFolder"
 export function html() {
@@ -27,8 +27,8 @@ export function html() {
     .pipe(handlerErrors("HTML"))
     .pipe(fileinclude())
     .pipe(plugins.replace(/@images\//g, "./images/"))
-    .pipe(gulpWebpHtmlNosvg())
-    .pipe(versionNumber(configVersionNumber))
+    // .pipe(gulpWebpHtmlNosvg())
+    // .pipe(versionNumber(configVersionNumber))
     .pipe(gulp.dest(path.build.html))
     .pipe(plugins.browsersync.stream());
 }

@@ -1,0 +1,187 @@
+.main-cont {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  @media screen and (min-width: 480px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+// shared styles
+.give-currency,
+.receive-currency,
+.main-cont__data {
+  @media screen and (min-width: 1200px) {
+    width: 33%;
+  }
+}
+.give-currency,
+.receive-currency,
+.exchange-currency,
+.users-info {
+  border-radius: 12px;
+  background-color: var(--color-gray-light);
+  @media screen and (min-width: 480px) {
+    padding: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 20px;
+  }
+}
+
+.give-currency__block-filter__list,
+.receive-currency__block-filter__list {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-weight: 600;
+}
+.give-currency__block-filter,
+.receive-currency__block-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.give-currency__block-filter__list,
+.receive-currency__block-filter__list {
+  font-size: 11px;
+}
+.receive-currency__block-filter__list-item,
+.give-currency__block-filter__list-item {
+  padding: 5px;
+  align-items: center;
+}
+.exchange-currency__block-calculator__give-header,
+.exchange-currency__block-calculator__receive-header {
+  display: flex;
+}
+.give-currency__block-list,
+.receive-currency__block-list {
+  @media screen and (min-width: 480px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+// Give block
+.give-currency {
+}
+.give-currency__block {
+}
+.give-currency__block-title {
+}
+.give-currency__block-filter {
+}
+.give-currency__block-filter__list {
+}
+.give-currency__block-filter__list-item {
+}
+.give-currency__block-filter__search {
+}
+.give-currency__block-list {
+   display: grid;
+}
+.give-currency__block-list__item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+.give-currency__block-list__item-img {
+  width: 26px;
+}
+.give-currency__block-list__item-text {
+}
+// Receive block
+.receive-currency {
+}
+.receive-currency__block {
+}
+.receive-currency__block-title {
+}
+.receive-currency__block-filter {
+}
+.receive-currency__block-filter__list {
+}
+.receive-currency__block-filter__list-item {
+}
+.receive-currency__block-filter__search {
+}
+.receive-currency__block-list {
+  display: grid;
+}
+.receive-currency__block-list__item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+.receive-currency__block-list__item-img {
+  width: 26px;
+}
+// main data
+.main-cont__data {
+}
+// Exchange currency
+.exchange-currency {
+}
+.exchange-currency__block {
+}
+.exchange-currency__block-title {
+}
+.exchange-currency__block-calculator {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.exchange-currency__block-calculator__give {
+}
+.exchange-currency__block-calculator__give-header {
+}
+.exchange-currency__block-calculator__give-header__title {
+}
+.exchange-currency__block-calculator__give-header__icon {
+}
+.exchange-currency__block-calculator__give-header__icon-img {
+}
+.exchange-currency__block-calculator__receive {
+}
+.exchange-currency__block-calculator__receive-header {
+}
+.exchange-currency__block-calculator__receive-header__icon {
+}
+.exchange-currency__block-calculator__receive-header__icon-img {
+}
+// User info
+.users-info {
+}
+.users-info__block {
+}
+.users-info__block-title {
+}
+.users-info__form {
+  display: flex;
+  flex-direction: column;
+}
+.users-info__form-label {
+}
+.users-info__form-label__input {
+}
+.users-info__form-label__checkbox {
+}
+.users-info__form-label__text {
+}
