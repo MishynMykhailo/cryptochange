@@ -553,11 +553,12 @@ class CryptoList {
     itemName.classList.add(classText);
     itemName.textContent = itemData.name;
     img.src = `./images/${itemData.className}.svg`;
+    img.alt = itemData.className;
     li.appendChild(img);
     li.appendChild(itemName);
     return li;
   }
-
+  // Создает элементы списка для каждого элемента данных и добавляет их в соответствующие списки.
   renderItems() {
     this.giveArray = [];
     this.receiveArray = [];
@@ -585,16 +586,20 @@ class CryptoList {
       this.listReceiveElem.appendChild(newItem2);
     });
   }
-
-  filterAndSearchItems(typeArray, searchString, listElem) {
+  // Отображает элементы, которые соответствуют условиям фильтрации, и скрывает остальные.
+  filterAndSearchItems(
+    typeArray,
+    searchString,
+    listElem,
+    errorMessage,
+    textFilter
+  ) {
     const listItems = listElem.querySelectorAll("li");
-const notFoundMessage = document.getElementById("not-found-message");
+    const notFoundMessage = document.getElementById(errorMessage);
     listItems.forEach((item) => {
       const itemType = item.getAttribute("data-type");
-      const itemNameElement = item.querySelector(
-        ".give-currency__block-list__item-text"
-      );
-  
+      const itemNameElement = item.querySelector(`.${textFilter}`);
+
       const itemName = itemNameElement
         ? itemNameElement.textContent.toLowerCase()
         : "";
@@ -621,7 +626,7 @@ const notFoundMessage = document.getElementById("not-found-message");
       notFoundMessage.style.display = "none";
     }
   }
-
+  // Добавляет обработчики событий для фильтрации и поиска элементов в списках.
   handlerFilter({
     idGiveFilter,
     idReceiveFilter,
@@ -654,7 +659,9 @@ const notFoundMessage = document.getElementById("not-found-message");
       this.filterAndSearchItems(
         this.typeGiveArray,
         this.searchGiveInput,
-        this.listGiveElem
+        this.listGiveElem,
+        "not-found-message-give",
+        "give-currency__block-list__item-text"
       );
     });
 
@@ -679,7 +686,9 @@ const notFoundMessage = document.getElementById("not-found-message");
       this.filterAndSearchItems(
         this.typeReceiveArray,
         this.searchReceiveInput,
-        this.listReceiveElem
+        this.listReceiveElem,
+        "not-found-message-receive",
+        "receive-currency__block-list__item-text"
       );
     });
 
@@ -688,7 +697,9 @@ const notFoundMessage = document.getElementById("not-found-message");
       this.filterAndSearchItems(
         this.typeGiveArray,
         this.searchGiveInput,
-        this.listGiveElem
+        this.listGiveElem,
+        "not-found-message-give",
+        "give-currency__block-list__item-text"
       );
     });
 
@@ -697,7 +708,9 @@ const notFoundMessage = document.getElementById("not-found-message");
       this.filterAndSearchItems(
         this.typeReceiveArray,
         this.searchReceiveInput,
-        this.listReceiveElem
+        this.listReceiveElem,
+        "not-found-message-receive",
+        "receive-currency__block-list__item-text"
       );
     });
   }
@@ -711,3 +724,67 @@ cryptoList.handlerFilter({
   idGiveSearchFilter: "give-search-filter",
   idReceiveSearchFilter: "receive-search-filter",
 });
+
+// Выбираем нужный нам банк и крипту
+class ItemsChooise {
+  constructor(idGiveElem, idReceiveElem) {
+    this.currentChoiceGive = {};
+    this.currentChoiceReceive = {};
+    this.listGiveElem = document.getElementById(idGiveElem);
+    this.listReceiveElem = document.getElementById(idReceiveElem);
+    this.listenerList();
+  }
+
+  listenerList() {
+    if (this.listGiveElem && this.listReceiveElem) {
+      this.listGiveElem.addEventListener("click", (e) => {
+        const listItem = e.target.closest("li");
+
+        if (
+          listItem &&
+          listItem.classList.contains("give-currency__block-list__item")
+        ) {
+          const imgElement = listItem.querySelector("img").src;
+          console.log(imgElement);
+          const pElement = listItem.querySelector("p").textContent;
+          console.log(pElement);
+          this.currentChoiceGive = { img: imgElement, text: pElement };
+          this.changeExchange(
+            "give-icon-img",
+            "give-icon-text",
+            this.currentChoiceGive
+          );
+        }
+      });
+
+      this.listReceiveElem.addEventListener("click", (e) => {
+        const listItem = e.target.closest("li");
+
+        if (
+          listItem &&
+          listItem.classList.contains("receive-currency__block-list__item")
+        ) {
+          const imgElement = listItem.querySelector("img").src;
+          console.log(imgElement);
+          const pElement = listItem.querySelector("p").textContent;
+          console.log(pElement);
+          this.currentChoiceReceive = { img: imgElement, text: pElement };
+          this.changeExchange(
+            "receive-icon-img",
+            "receive-icon-text",
+            this.currentChoiceReceive
+          );
+        }
+      });
+    }
+  }
+
+  changeExchange(IdImg, IdText, choice) {
+    const image = document.getElementById(IdImg);
+    const text = document.getElementById(IdText);
+    image.src = choice.img;
+    text.textContent = choice.text;
+  }
+}
+
+const clickList = new ItemsChooise("give-list", "receive-list");

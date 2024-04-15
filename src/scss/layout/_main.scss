@@ -48,6 +48,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 .give-currency__block-filter__list,
 .receive-currency__block-filter__list {
@@ -71,13 +72,26 @@
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1200px) {
-     grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 }
 .give-currency__block-list__item-text,
-.receive-currency__block-list__item-text{
+.receive-currency__block-list__item-text {
   font-size: 12px;
+}
+.exchange-currency__block-calculator__give-header__icon-img,
+.exchange-currency__block-calculator__receive-header__icon-img {
+  width: 17px;
+}
+.exchange-currency__block-calculator__receive-header__icon,
+.exchange-currency__block-calculator__give-header__icon {
+  display: flex;
+  gap: 5px;
+}
+
+.exchange-currency__block-calculator__receive,
+.exchange-currency__block-calculator__give {
 }
 // Give block
 .give-currency {
@@ -95,7 +109,7 @@
 .give-currency__block-filter__search {
 }
 .give-currency__block-list {
-   display: grid;
+  display: grid;
 }
 .give-currency__block-list__item {
   display: flex;
@@ -103,6 +117,13 @@
   gap: 10px;
   align-items: center;
   padding: 10px;
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
+  }
 }
 .give-currency__block-list__item-img {
   width: 26px;
@@ -133,6 +154,13 @@
   gap: 10px;
   align-items: center;
   padding: 10px;
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
+  }
 }
 .receive-currency__block-list__item-img {
   width: 26px;
@@ -152,6 +180,7 @@
   flex-direction: row;
   gap: 10px;
 }
+
 .exchange-currency__block-calculator__give {
 }
 .exchange-currency__block-calculator__give-header {

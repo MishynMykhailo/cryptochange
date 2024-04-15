@@ -4,11 +4,14 @@
   --color-bg: #f8f8f8;
   --color-black: #000000;
   --color-black-coal: #3f3f3f;
+  --color-black-coal-opacity: #3f3f3f8e;
   --color-gray-light: #ebebeb;
   // -------------------------FONTS-----------------------------------
   // -------------------------SECTION-PRICE--------------------------------
   --color-section-price: #000000;
   --color-section-price-title: #ffffff;
+  // Effect
+  --transition-standart: 250ms all ease;
 }
 * {
   box-sizing: border-box;

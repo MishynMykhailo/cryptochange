@@ -163,7 +163,12 @@
             >
               <!-- <li class="give-currency__block-list__item"></li> -->
             </ul>
-            <p id="not-found-message" style="display: none;">Такое не найдено, попробуйте другое</p>
+            <p
+              id="not-found-message-give"
+              style="display: none"
+            >
+              Такое не найдено, попробуйте другое
+            </p>
           </div>
         </div>
         <div class="receive-currency">
@@ -211,6 +216,12 @@
             >
               <!-- <li class="give-currency__block-list__item"></li> -->
             </ul>
+            <p
+              id="not-found-message-receive"
+              style="display: none"
+            >
+              Такое не найдено, попробуйте другое
+            </p>
           </div>
         </div>
         <div class="main-cont__data">
@@ -231,8 +242,10 @@
                       <img
                         src=""
                         class="exchange-currency__block-calculator__give-header__icon-img"
+                        id="give-icon-img"
                         alt="icon-give"
                       />
+                      <p id="give-icon-text"></p>
                     </div>
                   </div>
                   <div>
@@ -257,8 +270,10 @@
                       <img
                         src=""
                         class="exchange-currency__block-calculator__receive-header__icon-img"
+                        id="receive-icon-img"
                         alt="icon-receive"
                       />
+                      <p id="receive-icon-text"></p>
                     </div>
                   </div>
                   <div>
