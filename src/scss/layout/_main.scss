@@ -2,6 +2,9 @@
   display: flex;
   gap: 15px;
   justify-content: space-between;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
   @media screen and (min-width: 480px) {
     flex-direction: column;
   }
@@ -15,6 +18,9 @@
 .give-currency,
 .receive-currency,
 .main-cont__data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   @media screen and (min-width: 1200px) {
     width: 33%;
   }
@@ -25,6 +31,9 @@
 .users-info {
   border-radius: 12px;
   background-color: var(--color-gray-light);
+  @media screen and (max-width: 480px) {
+    padding: 10px;
+  }
   @media screen and (min-width: 480px) {
     padding: 10px;
   }
@@ -65,11 +74,21 @@
 }
 .give-currency__block-list,
 .receive-currency__block-list {
-  @media screen and (min-width: 480px) {
-    grid-template-columns: repeat(4, 1fr);
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  @media screen and (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: scroll;
   }
   @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
   }
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
@@ -92,6 +111,11 @@
 
 .exchange-currency__block-calculator__receive,
 .exchange-currency__block-calculator__give {
+  width: 50%;
+}
+.give-currency__block-filter__search,
+.receive-currency__block-filter__search {
+  width: 100%;
 }
 // Give block
 .give-currency {
@@ -165,15 +189,56 @@
 .receive-currency__block-list__item-img {
   width: 26px;
 }
+.exchange-currency__block-calculator__receive-header,
+.exchange-currency__block-calculator__give-header {
+  display: flex;
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 480px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.exchange-currency__block-calculator__give-field__input,
+.exchange-currency__block-calculator__receive-field__input {
+}
+.exchange-currency__block-calculator__give-header__title,
+.exchange-currency__block-calculator__receive-header__title {
+  font-size: 13px;
+}
+.exchange-currency__block-calculator__give-header__icon-text,
+.exchange-currency__block-calculator__receive-header__icon-text {
+  font-size: 13px;
+}
 // main data
 .main-cont__data {
 }
 // Exchange currency
 .exchange-currency {
 }
+.exchange-notification {
+  color: var(--color-black-coal);
+  background: rgb(252, 237, 185);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 15px;
+  border-radius: 5px;
+}
+.exchange-empty-currency {
+  font-size: 12px;
+  color: var(--color-gray-opacity);
+}
 .exchange-currency__block {
 }
 .exchange-currency__block-title {
+  margin-bottom: 15px;
 }
 .exchange-currency__block-calculator {
   display: flex;
@@ -191,6 +256,12 @@
 }
 .exchange-currency__block-calculator__give-header__icon-img {
 }
+.exchange-currency__block-calculator__give-header__icon-text {
+}
+.exchange-currency__block-calculator__give-field {
+}
+.exchange-currency__block-calculator__give-field__input {
+}
 .exchange-currency__block-calculator__receive {
 }
 .exchange-currency__block-calculator__receive-header {
@@ -199,22 +270,60 @@
 }
 .exchange-currency__block-calculator__receive-header__icon-img {
 }
+.exchange-currency__block-calculator__receive-header__icon-text {
+}
+.exchange-currency__block-calculator__receive-field {
+}
+.exchange-currency__block-calculator__receive-field__input {
+}
 // User info
 .users-info {
 }
 .users-info__block {
 }
 .users-info__block-title {
+  margin-bottom: 15px;
 }
 .users-info__form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 .users-info__form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.users-info__form-label__describe {
+  display: flex;
+  font-weight: 600;
+  font-size: 12px;
+color: var(--color-gray-opacity);
 }
 .users-info__form-label__input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
 }
+
 .users-info__form-label__checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
-.users-info__form-label__text {
+.users-info__form-label__checkbox-field {
+}
+.users-info__form-label__checkbox-text {
+  font-size: 12px;
+}
+.users-info__form-submit {
+padding: 10px;
+text-transform: uppercase;
+border: 1px solid transparent;
+outline: none;
+background-color: ;
 }

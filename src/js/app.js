@@ -745,13 +745,12 @@ class ItemsChooise {
           listItem.classList.contains("give-currency__block-list__item")
         ) {
           const imgElement = listItem.querySelector("img").src;
-          console.log(imgElement);
           const pElement = listItem.querySelector("p").textContent;
-          console.log(pElement);
           this.currentChoiceGive = { img: imgElement, text: pElement };
           this.changeExchange(
-            "give-icon-img",
-            "give-icon-text",
+            "give-icon-header",
+            "exchange-currency__block-calculator__give-header__icon-img",
+            "exchange-currency__block-calculator__give-header__icon-text",
             this.currentChoiceGive
           );
         }
@@ -765,13 +764,12 @@ class ItemsChooise {
           listItem.classList.contains("receive-currency__block-list__item")
         ) {
           const imgElement = listItem.querySelector("img").src;
-          console.log(imgElement);
           const pElement = listItem.querySelector("p").textContent;
-          console.log(pElement);
           this.currentChoiceReceive = { img: imgElement, text: pElement };
           this.changeExchange(
-            "receive-icon-img",
-            "receive-icon-text",
+            "receive-icon-header",
+            "exchange-currency__block-calculator__receive-header__icon-img",
+            "exchange-currency__block-calculator__receive-header__icon-text",
             this.currentChoiceReceive
           );
         }
@@ -779,11 +777,18 @@ class ItemsChooise {
     }
   }
 
-  changeExchange(IdImg, IdText, choice) {
-    const image = document.getElementById(IdImg);
-    const text = document.getElementById(IdText);
+  changeExchange(IdHeaderIcon, classNameImg, classNameText, choice) {
+    const container = document.getElementById(IdHeaderIcon);
+    container.textContent = "";
+    const image = document.createElement("img");
     image.src = choice.img;
+    image.classList.add(classNameImg);
+    const text = document.createElement("p");
+    text.classList.add(classNameText);
     text.textContent = choice.text;
+
+    container.appendChild(image);
+    container.appendChild(text);
   }
 }
 

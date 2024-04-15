@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1"
     />
     <title>Document</title>
     <link
@@ -238,22 +238,19 @@
                     </p>
                     <div
                       class="exchange-currency__block-calculator__give-header__icon"
+                      id="give-icon-header"
                     >
-                      <img
-                        src=""
-                        class="exchange-currency__block-calculator__give-header__icon-img"
-                        id="give-icon-img"
-                        alt="icon-give"
-                      />
-                      <p id="give-icon-text"></p>
+                      <p class="exchange-empty-currency">Пусто</p>
                     </div>
                   </div>
-                  <div>
+                  <!-- <div
+                    class="exchange-currency__block-calculator__give-field"
+                  >
                     <input
                       type="text"
-                      class=""
+                      class="exchange-currency__block-calculator__give-field__input"
                     />
-                  </div>
+                  </div> -->
                 </div>
                 <div class="exchange-currency__block-calculator__receive">
                   <div
@@ -266,26 +263,29 @@
                     </p>
                     <div
                       class="exchange-currency__block-calculator__receive-header__icon"
+                      id="receive-icon-header"
                     >
-                      <img
-                        src=""
-                        class="exchange-currency__block-calculator__receive-header__icon-img"
-                        id="receive-icon-img"
-                        alt="icon-receive"
-                      />
-                      <p id="receive-icon-text"></p>
+                      <p class="exchange-empty-currency">Пусто</p>
                     </div>
                   </div>
-                  <div>
+                  <!-- <div
+                    class="exchange-currency__block-calculator__receive-field"
+                  >
                     <input
                       type="text"
-                      class=""
+                      class="exchange-currency__block-calculator__receive-field__input"
                     />
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
           </div>
+          <p class="exchange-notification">
+            Пожалуйста, убедитесь, что вывод производится в рамках сети TRC-20,
+            в противном случае, средства не зачислятся на наш кошелек Чтобы
+            воспользоваться переводом через СБП, Ваша карта должна быть
+            подключена к Системе Быстрых Платежей!
+          </p>
           <div class="users-info">
             <div class="users-info__block">
               <h2 class="users-info__block-title">Ваши реквизиты</h2>
@@ -294,6 +294,7 @@
                 method="POST"
               >
                 <label class="users-info__form-label">
+                  <p class="users-info__form-label__describe">E-mail</p>
                   <input
                     class="users-info__form-label__input"
                     type="text"
@@ -301,6 +302,7 @@
                   />
                 </label>
                 <label class="users-info__form-label">
+                  <p class="users-info__form-label__describe">ФИО получателя</p>
                   <input
                     class="users-info__form-label__input"
                     type="text"
@@ -308,31 +310,33 @@
                   />
                 </label>
                 <label class="users-info__form-label">
+                  <p class="users-info__form-label__describe">Номер телефона</p>
                   <input
                     class="users-info__form-label__input"
                     type="text"
                     placeholder="Номер телефона"
                   />
                 </label>
-                <label class="users-info__form-label">
+                <label class="users-info__form-label__checkbox">
                   <input
-                    class="users-info__form-label__checkbox"
+                    class="users-info__form-label__checkbox-field"
                     type="checkbox"
                   />
-                  <p class="users-info__form-label__text">
+                  <p class="users-info__form-label__checkbox-text">
                     Я согласен на обработку персональных данных и принимаю
                     правила обмена
                   </p>
                 </label>
-                <label class="users-info__form-label">
+                <label class="users-info__form-label__checkbox">
                   <input
-                    class="users-info__form-label__checkbox"
+                    class="users-info__form-label__checkbox-field"
                     type="checkbox"
                   />
-                  <p class="users-info__form-label__text">
+                  <p class="users-info__form-label__checkbox-text">
                     Я согласен с процедурой KYC и AML
                   </p>
                 </label>
+                <button type="submit" class="users-info__form-submit">Получить косультанцию</button>
               </form>
             </div>
           </div>

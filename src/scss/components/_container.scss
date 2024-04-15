@@ -4,6 +4,9 @@
   margin-right: auto;
   margin-left: auto;
   // border: 2px teal solid;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
   @media screen and (min-width: 480px) {
     width: 450px;
   }
