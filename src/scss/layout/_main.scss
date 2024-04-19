@@ -2,7 +2,7 @@
   display: flex;
   gap: 15px;
   justify-content: space-between;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 479px) {
     flex-direction: column;
   }
   @media screen and (min-width: 480px) {
@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: max-content;
   @media screen and (min-width: 1200px) {
     width: 33%;
   }
@@ -31,7 +32,7 @@
 .users-info {
   border-radius: 12px;
   background-color: var(--color-gray-light);
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 479px) {
     padding: 10px;
   }
   @media screen and (min-width: 480px) {
@@ -72,9 +73,15 @@
 .exchange-currency__block-calculator__receive-header {
   display: flex;
 }
+
+
 .give-currency__block-list,
 .receive-currency__block-list {
-  @media screen and (max-width: 480px) {
+
+
+
+  
+  @media screen and (max-width: 479px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     max-height: 400px;
@@ -142,6 +149,7 @@
   align-items: center;
   padding: 10px;
   transition: var(--transition-standart);
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: var(--color-white);
@@ -179,6 +187,7 @@
   align-items: center;
   padding: 10px;
   transition: var(--transition-standart);
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: var(--color-white);
@@ -192,7 +201,8 @@
 .exchange-currency__block-calculator__receive-header,
 .exchange-currency__block-calculator__give-header {
   display: flex;
-  @media screen and (max-width: 480px) {
+  gap: 10px;
+  @media screen and (max-width: 479px) {
     flex-direction: column;
   }
   @media screen and (min-width: 480px) {
@@ -202,7 +212,6 @@
   }
   @media screen and (min-width: 1200px) {
     flex-direction: row;
-    gap: 10px;
   }
 }
 
@@ -298,7 +307,7 @@
   display: flex;
   font-weight: 600;
   font-size: 12px;
-color: var(--color-gray-opacity);
+  color: var(--color-gray-opacity);
 }
 .users-info__form-label__input {
   width: 100%;
@@ -321,9 +330,12 @@ color: var(--color-gray-opacity);
   font-size: 12px;
 }
 .users-info__form-submit {
-padding: 10px;
-text-transform: uppercase;
-border: 1px solid transparent;
-outline: none;
-background-color: ;
+  padding: 10px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: var(--color-aqua);
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
 }

@@ -1,8 +1,10 @@
 //BASE
 @import "./base/styles-normalize";
 // UTILS
+@import "./utils/color-svg";
 //COMPONENTS
 @import "./components/container";
+@import "./components/scroll";
 //LAYOUT
 @import "./layout/header";
 @import "./layout/main";

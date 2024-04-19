@@ -1,5 +1,21 @@
 // shared styles
+.footer-cont__block-left__partners,
+.footer-cont__block-left__clients {
+  display: flex;
 
+  gap: 5px;
+  @media screen and (max-width: 479px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 480px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+    flex-direction: column;
+  }
+}
 //
 .footer-cont {
   padding-top: 40px;
@@ -8,40 +24,86 @@
 .footer-cont__block {
   display: flex;
   gap: 10px;
+  @media screen and (max-width: 479px) {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
   @media screen and (min-width: 480px) {
     flex-direction: column;
+    margin-bottom: 15px;
   }
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1200px) {
     flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
   }
 }
 .footer-cont__block-left {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  @media screen and (max-width: 479px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 480px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+  }
 }
 .footer-cont__block-left__clients {
 }
 .footer-cont__block-left__clients-title {
+  text-align: center;
 }
 .footer-cont__block-left-clients-link {
+  color: var(--color-aqua);
+  font-weight: 600;
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    color: var(--color-dark-aqua);
+  }
 }
 .footer-cont__block-left__partners {
 }
 .footer-cont__block-left__partners-title {
+  text-align: center;
 }
 .footer-cont__block-left-partners-link {
+  color: var(--color-aqua);
+  font-weight: 600;
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    color: var(--color-dark-aqua);
+  }
 }
 .footer-cont__block-mid {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  @media screen and (max-width: 479px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 480px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+  }
 }
 .footer-cont__block-mid__link {
+  display: flex;
+  align-items: center;
 }
 .footer-cont__block-mid__link-img {
+  width: 105px;
 }
 .footer-cont__block-right {
 }
@@ -49,17 +111,43 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
+  @media screen and (max-width: 479px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 480px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+  }
 }
 .footer-cont__block-right__list-item {
 }
 .footer-cont__block-right__list-item__link {
+  display: flex;
+  align-items: center;
+
+  &:hover .svg-color-fill,
+  &:focus .svg-color-fill {
+    fill: black;
+  }
+  &:hover .svg-color-fill-bg,
+  &:focus .svg-color-fill-bg {
+    fill: #c2eaea;
+  }
 }
 .footer-cont__block-right__list-item__link-img {
+  width: 120px;
 }
 .footer-cont__info {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  @media screen and (max-width: 479px) {
+    flex-direction: column;
+  }
   @media screen and (min-width: 480px) {
     flex-direction: column;
   }
@@ -67,13 +155,19 @@
   }
   @media screen and (min-width: 1200px) {
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 .footer-cont__info-list {
   display: flex;
   gap: 10px;
+  @media screen and (max-width: 479px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   @media screen and (min-width: 480px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
   @media screen and (min-width: 768px) {
   }
@@ -84,8 +178,26 @@
 .footer-cont__info-list__item {
 }
 .footer-cont__info-list__item-link {
+  color: var(--color-aqua);
+  font-weight: 600;
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    color: var(--color-dark-aqua);
+  }
 }
 .footer-cont__created {
 }
 .footer-cont__created-text {
+  display: flex;
+  @media screen and (max-width: 479px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 480px) {
+    justify-content: center;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+  }
 }
