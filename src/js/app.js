@@ -64,12 +64,12 @@ const data = [
   },
   {
     id: 39,
-    name: "Сбербанк",
-    className: "Sberbank",
+    name: "Swedbank",
+    className: "Swedbank",
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
@@ -164,12 +164,12 @@ const data = [
   },
   {
     id: 45,
-    name: "Тинькофф",
-    className: "Tinkoff",
+    name: "Luminor",
+    className: "Luminor",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
@@ -208,12 +208,12 @@ const data = [
   },
   {
     id: 3,
-    name: "Альфабанк",
-    className: "Alfabank",
+    name: "Citadele",
+    className: "Citadele",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
@@ -229,12 +229,12 @@ const data = [
   },
   {
     id: 21,
-    name: "Мир",
-    className: "Mir",
+    name: "Postbank",
+    className: "Postbank",
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
@@ -250,22 +250,22 @@ const data = [
   },
   {
     id: 34,
-    name: "Райффайзенбанк",
-    className: "Raiffeisen",
+    name: "Bank of Ireland",
+    className: "bankofireland",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
     id: 51,
-    name: "ВТБ",
-    className: "Vtb",
+    name: "Revoult",
+    className: "revolut",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
@@ -353,12 +353,12 @@ const data = [
   },
   {
     id: 32,
-    name: "Промсвязьбанк",
-    className: "Psbank",
+    name: "Paysera",
+    className: "Paysera",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
@@ -407,104 +407,65 @@ const data = [
   },
   {
     id: 80,
-    name: "РНКБ",
-    className: "Rncb",
+    name: "Dukascopy",
+    className: "dukascopy",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
     id: 5,
-    name: "Авангард",
-    className: "Avangard",
+    name: "Moldindcon Bank",
+    className: "Moldindconbank",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
     id: 26,
-    name: "Открытие",
-    className: "Open",
+    name: "LHV",
+    className: "Lhv",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
     id: 59,
-    name: "Хоум Кредит",
-    className: "HomeCredit",
+    name: "Unicredit Bank",
+    className: "unicreditbank",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
     id: 61,
-    name: "РосБанк",
-    className: "Rosbank",
+    name: "ZEN",
+    className: "Zen",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
   {
     id: 30,
-    name: "ПочтаБанк",
-    className: "Pochtabank",
+    name: "Barclays",
+    className: "barclays",
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
+      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
-  {
-    id: 37,
-    name: "Россельхозбанк",
-    className: "Rshb",
-    type: 0,
-    fromNotice: "Прием средств возможен на карты других банков.",
-    currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-    ],
-  },
-  {
-    id: 18,
-    name: "Газпромбанк",
-    className: "Gazprombank",
-    type: 0,
-    fromNotice: "Прием средств возможен на карты других банков.",
-    currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-    ],
-  },
-  {
-    id: 81,
-    name: "МТС Банк",
-    className: "MtsBank",
-    type: 0,
-    fromNotice: "Прием средств возможен на карты других банков.",
-    currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-    ],
-  },
-  {
-    id: 38,
-    name: "Русский стандарт",
-    className: "RusStandart",
-    type: 0,
-    fromNotice: "Прием средств возможен на карты других банков.",
-    currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-    ],
-  },
+ 
   {
     id: 484,
     name: "SEPA",
@@ -552,7 +513,7 @@ class CryptoList {
     const itemName = document.createElement("p");
     itemName.classList.add(classText);
     itemName.textContent = itemData.name;
-    img.src = `./images/${itemData.className}.svg`;
+    img.src = `./images/${itemData.className.toLowerCase()}.svg`;
     img.alt = itemData.className;
     li.appendChild(img);
     li.appendChild(itemName);
@@ -639,7 +600,14 @@ class CryptoList {
     const receiveSearchFilter = document.getElementById(idReceiveSearchFilter);
 
     giveFilter.addEventListener("click", (e) => {
-      const id = e.target.dataset.id;
+      const currentTargetElem = e.currentTarget;
+      const targetElem = e.target;
+      const childrenLi = currentTargetElem.children;
+      for (let i = 0; i < childrenLi.length; i++) {
+        childrenLi[i].classList.remove("active");
+      }
+      e.target.classList.add("active");
+      const id = targetElem.dataset.id;
       switch (id) {
         case "all":
           this.typeGiveArray = null;

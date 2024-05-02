@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <title>Document</title>
+    <title>Быстрый обмен валют / bixter</title>
     <link
       rel="stylesheet"
       href="./css/styles.css"
@@ -73,44 +73,7 @@
           <ul class="header__nav-list">
             <li class="header__nav-list__item"></li>
             <li class="header__nav-list__item">
-              <svg
-                width="30"
-                height="22"
-                viewBox="0 0 30 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#clip0_3187_12555)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 0H30V22H0V0Z"
-                    fill="white"
-                  ></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 7.33337H30V22H0V7.33337Z"
-                    fill="#0039A6"
-                  ></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 14.6666H30V22H0V14.6666Z"
-                    fill="#D52B1E"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_3187_12555">
-                    <rect
-                      width="30"
-                      height="22"
-                      rx="4"
-                      fill="white"
-                    ></rect>
-                  </clipPath>
-                </defs>
-              </svg>
+            
             </li>
           </ul>
         </nav>
@@ -120,42 +83,72 @@
       <div class="container main-cont">
         <div class="give-currency">
           <div class="give-currency__block">
-            <h2 class="give-currency__block-title">Отдаете</h2>
-            <div class="give-currency__block-filter">
-              <ul
-                id="give-filter"
-                class="give-currency__block-filter__list"
-              >
-                <li
-                  class="give-currency__block-filter__list-item"
-                  data-id="all"
+            <div class="give-currency__block-menu">
+              <h2 class="give-currency__block-title">Отдаете</h2>
+              <div class="give-currency__block-filter">
+                <ul
+                  id="give-filter"
+                  class="give-currency__block-filter__list"
                 >
-                  ВСЕ
-                </li>
-                <li
-                  class="give-currency__block-filter__list-item"
-                  data-id="crypto"
-                >
-                  КРИПТА
-                </li>
-                <li
-                  class="give-currency__block-filter__list-item"
-                  data-id="bank"
-                >
-                  БАНКИ
-                </li>
-                <li
-                  class="give-currency__block-filter__list-item"
-                  data-id="ps"
-                >
-                  ПС
-                </li>
-              </ul>
-              <input
-                type="text"
-                id="give-search-filter"
-                class="give-currency__block-filter__search"
-              />
+                  <li
+                    class="give-currency__block-filter__list-item active"
+                    data-id="all"
+                  >
+                    ВСЕ
+                  </li>
+                  <li
+                    class="give-currency__block-filter__list-item"
+                    data-id="crypto"
+                  >
+                    КРИПТА
+                  </li>
+                  <li
+                    class="give-currency__block-filter__list-item"
+                    data-id="bank"
+                  >
+                    БАНКИ
+                  </li>
+                  <li
+                    class="give-currency__block-filter__list-item"
+                    data-id="ps"
+                  >
+                    ПС
+                  </li>
+                </ul>
+                <div class="give-currency__search-filter">
+                  <label for="give-search-filter" class="give-currency__search-filter__label">
+                    <input
+                      type="text"
+                      id="give-search-filter"
+                      class="give-currency__block-filter__search"
+                      placeholder=""
+                    />
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_1882_112553)">
+                        <path
+                          d="M19.7557 18.5781L14.7815 13.6039C16.137 11.946 16.8035 9.83063 16.643 7.69519C16.4826 5.55974 15.5075 3.56766 13.9195 2.13098C12.3315 0.69431 10.252 -0.0770391 8.11119 -0.0235126C5.9704 0.030014 3.93207 0.90432 2.41783 2.41856C0.903588 3.9328 0.0292815 5.97113 -0.024245 8.11192C-0.0777715 10.2527 0.693577 12.3322 2.13025 13.9202C3.56693 15.5082 5.55901 16.4833 7.69445 16.6438C9.8299 16.8042 11.9453 16.1377 13.6032 14.7822L18.5773 19.7564C18.7345 19.9082 18.945 19.9922 19.1635 19.9903C19.382 19.9884 19.591 19.9007 19.7455 19.7462C19.9 19.5917 19.9877 19.3827 19.9895 19.1642C19.9914 18.9457 19.9075 18.7352 19.7557 18.5781ZM8.33315 15.0006C7.01461 15.0006 5.72568 14.6096 4.62935 13.877C3.53302 13.1445 2.67854 12.1033 2.17395 10.8851C1.66937 9.66693 1.53735 8.32649 1.79458 7.03328C2.05182 5.74008 2.68676 4.55219 3.61911 3.61984C4.55146 2.68749 5.73934 2.05255 7.03255 1.79532C8.32576 1.53808 9.6662 1.6701 10.8844 2.17469C12.1025 2.67927 13.1437 3.53375 13.8763 4.63008C14.6088 5.72641 14.9998 7.01534 14.9998 8.33389C14.9978 10.1014 14.2948 11.7959 13.045 13.0457C11.7952 14.2956 10.1007 14.9986 8.33315 15.0006Z"
+                          fill="#BCCACB"
+                        ></path>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1882_112553">
+                          <rect
+                            width="20"
+                            height="20"
+                            fill="white"
+                          ></rect>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </label>
+                </div>
+              </div>
             </div>
             <ul
               id="give-list"
@@ -173,42 +166,72 @@
         </div>
         <div class="receive-currency">
           <div class="receive-currency__block">
-            <h2 class="receive-currency__block-title">Получаете</h2>
-            <div class="receive-currency__block-filter">
-              <ul
-                id="receive-filter"
-                class="receive-currency__block-filter__list"
-              >
-                <li
-                  class="receive-currency__block-filter__list-item"
-                  data-id="all"
+            <div class="receive-currency__block-menu">
+              <h2 class="receive-currency__block-title">Получаете</h2>
+              <div class="receive-currency__block-filter">
+                <ul
+                  id="receive-filter"
+                  class="receive-currency__block-filter__list"
                 >
-                  ВСЕ
-                </li>
-                <li
-                  class="receive-currency__block-filter__list-item"
-                  data-id="crypto"
-                >
-                  КРИПТА
-                </li>
-                <li
-                  class="receive-currency__block-filter__list-item"
-                  data-id="bank"
-                >
-                  БАНКИ
-                </li>
-                <li
-                  class="receive-currency__block-filter__list-item"
-                  data-id="ps"
-                >
-                  ПС
-                </li>
-              </ul>
-              <input
-                type="text"
-                id="receive-search-filter"
-                class="receive-currency__block-filter__search"
-              />
+                  <li
+                    class="receive-currency__block-filter__list-item ative"
+                    data-id="all"
+                  >
+                    ВСЕ
+                  </li>
+                  <li
+                    class="receive-currency__block-filter__list-item"
+                    data-id="crypto"
+                  >
+                    КРИПТА
+                  </li>
+                  <li
+                    class="receive-currency__block-filter__list-item"
+                    data-id="bank"
+                  >
+                    БАНКИ
+                  </li>
+                  <li
+                    class="receive-currency__block-filter__list-item"
+                    data-id="ps"
+                  >
+                    ПС
+                  </li>
+                </ul>
+               <div class="receive-currency__search-filter">
+                 <label for="receive-search-filter" class="receive-currency__search-filter__label">
+                   <input
+                    type="text"
+                    id="receive-search-filter"
+                    class="receive-currency__block-filter__search"
+                    placeholder=""
+                  />
+                      <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_1882_112553)">
+                      <path
+                        d="M19.7557 18.5781L14.7815 13.6039C16.137 11.946 16.8035 9.83063 16.643 7.69519C16.4826 5.55974 15.5075 3.56766 13.9195 2.13098C12.3315 0.69431 10.252 -0.0770391 8.11119 -0.0235126C5.9704 0.030014 3.93207 0.90432 2.41783 2.41856C0.903588 3.9328 0.0292815 5.97113 -0.024245 8.11192C-0.0777715 10.2527 0.693577 12.3322 2.13025 13.9202C3.56693 15.5082 5.55901 16.4833 7.69445 16.6438C9.8299 16.8042 11.9453 16.1377 13.6032 14.7822L18.5773 19.7564C18.7345 19.9082 18.945 19.9922 19.1635 19.9903C19.382 19.9884 19.591 19.9007 19.7455 19.7462C19.9 19.5917 19.9877 19.3827 19.9895 19.1642C19.9914 18.9457 19.9075 18.7352 19.7557 18.5781ZM8.33315 15.0006C7.01461 15.0006 5.72568 14.6096 4.62935 13.877C3.53302 13.1445 2.67854 12.1033 2.17395 10.8851C1.66937 9.66693 1.53735 8.32649 1.79458 7.03328C2.05182 5.74008 2.68676 4.55219 3.61911 3.61984C4.55146 2.68749 5.73934 2.05255 7.03255 1.79532C8.32576 1.53808 9.6662 1.6701 10.8844 2.17469C12.1025 2.67927 13.1437 3.53375 13.8763 4.63008C14.6088 5.72641 14.9998 7.01534 14.9998 8.33389C14.9978 10.1014 14.2948 11.7959 13.045 13.0457C11.7952 14.2956 10.1007 14.9986 8.33315 15.0006Z"
+                        fill="#BCCACB"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1882_112553">
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                        ></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                 </label>
+               </div>
+              </div>
             </div>
             <ul
               id="receive-list"
@@ -243,14 +266,12 @@
                       <p class="exchange-empty-currency">Пусто</p>
                     </div>
                   </div>
-                  <!-- <div
-                    class="exchange-currency__block-calculator__give-field"
-                  >
+                  <div class="exchange-currency__block-calculator__give-field">
                     <input
                       type="text"
                       class="exchange-currency__block-calculator__give-field__input"
                     />
-                  </div> -->
+                  </div>
                 </div>
                 <div class="exchange-currency__block-calculator__receive">
                   <div
@@ -268,24 +289,30 @@
                       <p class="exchange-empty-currency">Пусто</p>
                     </div>
                   </div>
-                  <!-- <div
+                  <div
                     class="exchange-currency__block-calculator__receive-field"
                   >
-                    <input
+                    <!-- <input
                       type="text"
                       class="exchange-currency__block-calculator__receive-field__input"
-                    />
-                  </div> -->
+                    /> -->
+                    <p
+                      class="exchange-currency__block-calculator__receive-field__message"
+                    >
+                      Вас проконсультирует менеджер
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+            <p class="exchange-notification">
+              Пожалуйста, убедитесь, что вывод производится в рамках сети
+              TRC-20, в противном случае, средства не зачислятся на наш кошелек
+              Чтобы воспользоваться переводом через СБП, Ваша карта должна быть
+              подключена к Системе Быстрых Платежей!
+            </p>
           </div>
-          <p class="exchange-notification">
-            Пожалуйста, убедитесь, что вывод производится в рамках сети TRC-20,
-            в противном случае, средства не зачислятся на наш кошелек Чтобы
-            воспользоваться переводом через СБП, Ваша карта должна быть
-            подключена к Системе Быстрых Платежей!
-          </p>
+
           <div class="users-info">
             <div class="users-info__block">
               <h2 class="users-info__block-title">Ваши реквизиты</h2>
@@ -336,7 +363,12 @@
                     Я согласен с процедурой KYC и AML
                   </p>
                 </label>
-                <button type="submit" class="users-info__form-submit">Получить косультанцию</button>
+                <button
+                  type="submit"
+                  class="users-info__form-submit"
+                >
+                  Получить косультанцию
+                </button>
               </form>
             </div>
           </div>
@@ -435,23 +467,23 @@
                     ></rect>
                     <path
                       d="M24.9684 11.6615C24.4977 11.2288 22.5922 9.84335 18.3447 9.82437C18.3447 9.82437 13.338 9.5207 10.8973 11.7602C9.53843 13.1191 9.06016 15.1043 9.01081 17.5716C8.96146 20.0351 8.89694 24.6546 13.3494 25.9072H13.3532L13.3494 27.8165C13.3494 27.8165 13.3228 28.5908 13.8315 28.7465C14.4464 28.9363 14.8108 28.3479 15.3992 27.714C15.7218 27.3648 16.1659 26.8562 16.5037 26.4652C19.548 26.7195 21.89 26.135 22.1557 26.0477C22.7706 25.8465 26.2514 25.4024 26.8169 20.7829C27.4015 16.0305 26.5323 13.0204 24.9684 11.6615ZM25.4846 20.4488C25.0063 24.3054 22.1861 24.5483 21.666 24.7153C21.4459 24.7874 19.3885 25.2999 16.7998 25.1291C16.7998 25.1291 14.8715 27.4559 14.2718 28.0594C14.1769 28.1543 14.0668 28.1923 13.9947 28.1733C13.8922 28.1467 13.8619 28.0253 13.8656 27.8469C13.8656 27.5887 13.8808 24.6698 13.8808 24.6698C13.877 24.6698 13.877 24.6698 13.8808 24.6698C10.1116 23.6259 10.3318 19.6935 10.3735 17.6361C10.4153 15.5788 10.8024 13.8897 11.9526 12.7547C14.0137 10.8872 18.2688 11.1643 18.2688 11.1643C21.8596 11.1795 23.5791 12.2613 23.9777 12.6219C25.3024 13.7606 25.9781 16.4746 25.4846 20.4488Z"
-                       class="svg-color-fill"
+                      class="svg-color-fill"
                     ></path>
                     <path
                       d="M20.0945 17.7083C19.9693 17.7083 19.863 17.6096 19.8554 17.4806C19.8136 16.6645 19.4302 16.2659 18.6483 16.2242C18.5155 16.2166 18.413 16.1027 18.4206 15.9698C18.4282 15.837 18.542 15.7345 18.6749 15.7421C19.7073 15.799 20.2843 16.3912 20.3374 17.454C20.345 17.5869 20.2426 17.7007 20.1097 17.7045C20.1021 17.7083 20.0983 17.7083 20.0945 17.7083Z"
-                       class="svg-color-fill"
+                      class="svg-color-fill"
                     ></path>
                     <path
                       d="M21.3245 18.118H21.3207C21.1879 18.1142 21.0816 18.0041 21.0854 17.8712C21.1044 17.0513 20.869 16.3871 20.368 15.8405C19.8707 15.2939 19.1837 14.9978 18.2765 14.9333C18.1436 14.9219 18.0449 14.808 18.0563 14.6752C18.0677 14.5423 18.1816 14.4436 18.3144 14.455C19.3393 14.5309 20.1478 14.8877 20.7248 15.5178C21.3055 16.1517 21.5864 16.945 21.5674 17.8826C21.5636 18.0155 21.4536 18.118 21.3245 18.118Z"
-                       class="svg-color-fill"
+                      class="svg-color-fill"
                     ></path>
                     <path
                       d="M22.5846 18.6117C22.4518 18.6117 22.3455 18.5054 22.3455 18.3725C22.3341 16.9035 21.9128 15.7838 21.0549 14.9449C20.2085 14.1174 19.1342 13.6961 17.8702 13.6847C17.7374 13.6847 17.6311 13.5746 17.6311 13.4418C17.6311 13.3089 17.7412 13.2026 17.8702 13.2026C19.2633 13.214 20.4476 13.6809 21.3852 14.5995C22.3265 15.5181 22.8086 16.7859 22.8238 18.3649C22.8276 18.5016 22.7213 18.6117 22.5846 18.6117C22.5884 18.6117 22.5884 18.6117 22.5846 18.6117Z"
-                       class="svg-color-fill"
+                      class="svg-color-fill"
                     ></path>
                     <path
                       d="M18.7053 20.6805C18.7053 20.6805 19.0432 20.7109 19.2254 20.487L19.5784 20.0428C19.7492 19.8227 20.1629 19.6822 20.5653 19.9062C20.7892 20.0315 21.1954 20.282 21.4459 20.468C21.7154 20.6654 22.262 21.1209 22.2658 21.1247C22.5277 21.3448 22.5884 21.6675 22.41 22.0129C22.41 22.0129 22.41 22.0167 22.41 22.0205C22.2278 22.3431 21.9811 22.6468 21.6737 22.9277C21.6699 22.9277 21.6699 22.9315 21.6661 22.9315C21.4117 23.144 21.1612 23.2655 20.9183 23.2921C20.8879 23.2997 20.8538 23.2997 20.8082 23.2997C20.7019 23.2997 20.5956 23.2845 20.4894 23.2503L20.4818 23.2389C20.1022 23.1326 19.4721 22.8669 18.4244 22.2862C17.7412 21.9104 17.1756 21.527 16.6936 21.1436C16.4392 20.9425 16.1811 20.7185 15.9154 20.4528C15.9078 20.4452 15.8964 20.4338 15.8888 20.4262C15.8813 20.4186 15.8699 20.4072 15.8623 20.3997C15.8547 20.3921 15.8433 20.3807 15.8357 20.3731C15.8281 20.3655 15.8167 20.3541 15.8091 20.3465C15.5472 20.0808 15.3195 19.8227 15.1183 19.5684C14.7349 19.0901 14.3515 18.5207 13.9758 17.8375C13.395 16.786 13.1293 16.1559 13.023 15.7802L13.0116 15.7726C12.9775 15.6663 12.9623 15.56 12.9623 15.4537C12.9623 15.4082 12.9623 15.374 12.9699 15.3436C13.0002 15.0969 13.1217 14.8502 13.3305 14.5959C13.3305 14.5921 13.3343 14.5921 13.3343 14.5883C13.6152 14.277 13.9188 14.0341 14.2415 13.8519C14.2415 13.8519 14.2453 13.8519 14.2491 13.8519C14.5907 13.6735 14.9133 13.7342 15.1373 13.9961C15.1373 13.9961 15.5966 14.5465 15.794 14.816C15.9799 15.0703 16.2305 15.4727 16.3557 15.6966C16.5797 16.099 16.4392 16.5127 16.2191 16.6836L15.775 17.0366C15.551 17.2188 15.5814 17.5566 15.5814 17.5566C15.5814 17.5566 16.2381 20.0542 18.7053 20.6805Z"
-                       class="svg-color-fill"
+                      class="svg-color-fill"
                     ></path></svg
                 ></a>
               </li>
@@ -471,7 +503,7 @@
                       d="M36 18.5C36 8.55888 27.9411 0.5 18 0.5C8.05888 0.5 0 8.55888 0 18.5C0 28.4411 8.05888 36.5 18 36.5C27.9411 36.5 36 28.4411 36 18.5Z"
                       class="svg-color-fill-bg"
                     ></path>
-                 
+
                     <path
                       d="M18.2557 24.5C12.4476 24.5 9.13586 20.3783 9 13.5088H11.9211C12.0145 18.5464 14.1543 20.6777 15.8526 21.1181V13.5088H18.5954V17.8507C20.2682 17.6657 22.0345 15.6841 22.6289 13.5H25.3631C25.1402 14.6306 24.6948 15.7014 24.0549 16.6455C23.415 17.5895 22.5942 18.3866 21.6439 18.9868C22.7044 19.5343 23.641 20.3087 24.3918 21.259C25.1427 22.2093 25.6908 23.3139 26 24.5H22.9855C22.3402 22.4127 20.7268 20.7922 18.5954 20.5721V24.5H18.2642H18.2557Z"
                       class="svg-color-fill"
