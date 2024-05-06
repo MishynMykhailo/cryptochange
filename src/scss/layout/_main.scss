@@ -190,6 +190,27 @@
   gap: 5px;
   align-items: center;
 }
+.give-currency__block-menu,
+.receive-currency__block-menu {
+  position: relative;
+}
+.give-currency__search-filter,
+.receive-currency__search-filter {
+  @media screen and (max-width: 479px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (min-width: 480px) {
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
 // Give block
 
 .give-currency {
@@ -248,6 +269,7 @@
   display: grid;
 }
 .give-currency__block-list__item {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -258,10 +280,15 @@
   &:hover,
   &:focus {
     background-color: var(--color-white);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
   }
+  :hover .network__list {
+  display: flex;
 }
+}
+
 .give-currency__block-list__item-img {
   width: 26px;
 }
@@ -288,6 +315,7 @@
   display: grid;
 }
 .receive-currency__block-list__item {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 10px;

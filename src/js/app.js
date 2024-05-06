@@ -465,7 +465,7 @@ const data = [
       { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
     ],
   },
- 
+
   {
     id: 484,
     name: "SEPA",
@@ -508,15 +508,46 @@ class CryptoList {
     const li = document.createElement("li");
     li.setAttribute("data-type", itemData.type);
     li.classList.add(classLi);
+
     const img = document.createElement("img");
     img.classList.add(classImg);
+    img.src = `./images/${itemData.className.toLowerCase()}.svg`;
+    img.alt = itemData.className;
+
     const itemName = document.createElement("p");
     itemName.classList.add(classText);
     itemName.textContent = itemData.name;
-    img.src = `./images/${itemData.className.toLowerCase()}.svg`;
-    img.alt = itemData.className;
+
     li.appendChild(img);
     li.appendChild(itemName);
+
+    // Создаем список сети для переводов
+    if (itemData.currencies && itemData.currencies.length > 0) {
+      const networkList = document.createElement("ul");
+      networkList.classList.add("network__list");
+
+      for (const crypto of itemData.currencies) {
+        const networkName = crypto.network;
+        if (networkName) {
+          const networkItem = document.createElement("li");
+          networkItem.classList.add("network__list-item");
+          networkItem.textContent = networkName;
+          networkList.appendChild(networkItem);
+        }
+      }
+
+      li.appendChild(networkList);
+
+      // Добавляем обработчики для показа и скрытия networkList при наведении на li
+      li.addEventListener("mouseenter", () => {
+        networkList.style.opacity = 1;
+      });
+
+      li.addEventListener("mouseleave", () => {
+        networkList.style.opacity = 0;
+      });
+    }
+
     return li;
   }
   // Создает элементы списка для каждого элемента данных и добавляет их в соответствующие списки.
@@ -564,7 +595,6 @@ class CryptoList {
       const itemName = itemNameElement
         ? itemNameElement.textContent.toLowerCase()
         : "";
-
       const typeMatch = typeArray === null || typeArray === Number(itemType);
       const nameMatch = itemName.includes(searchString);
 
