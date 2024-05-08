@@ -521,14 +521,14 @@ class CryptoList {
     li.appendChild(img);
     li.appendChild(itemName);
 
-    // Создаем список сети для переводов
+    // Создаем список сетей для переводов, если есть данные
     if (itemData.currencies && itemData.currencies.length > 0) {
       const networkList = document.createElement("ul");
       networkList.classList.add("network__list");
 
       for (const crypto of itemData.currencies) {
         const networkName = crypto.network;
-        if (networkName) {
+        if (networkName !== null && networkName !== undefined) {
           const networkItem = document.createElement("li");
           networkItem.classList.add("network__list-item");
           networkItem.textContent = networkName;
@@ -536,20 +536,15 @@ class CryptoList {
         }
       }
 
-      li.appendChild(networkList);
-
-      // Добавляем обработчики для показа и скрытия networkList при наведении на li
-      li.addEventListener("mouseenter", () => {
-        networkList.style.opacity = 1;
-      });
-
-      li.addEventListener("mouseleave", () => {
-        networkList.style.opacity = 0;
-      });
+      // Добавляем networkList к li только если он не пустой
+      if (networkList.childElementCount > 0) {
+        li.appendChild(networkList);
+      }
     }
 
     return li;
   }
+
   // Создает элементы списка для каждого элемента данных и добавляет их в соответствующие списки.
   renderItems() {
     this.giveArray = [];
@@ -737,7 +732,6 @@ class ItemsChooise {
     if (this.listGiveElem && this.listReceiveElem) {
       this.listGiveElem.addEventListener("click", (e) => {
         const listItem = e.target.closest("li");
-
         if (
           listItem &&
           listItem.classList.contains("give-currency__block-list__item")
@@ -791,3 +785,89 @@ class ItemsChooise {
 }
 
 const clickList = new ItemsChooise("give-list", "receive-list");
+// ФЛАГИ
+
+const flags = {
+  ee: {
+    iso: "ee",
+    title: "Эстония",
+    countryCode: "+372",
+  },
+  lv: {
+    iso: "lv",
+    title: "Латвия",
+    countryCode: "+371",
+  },
+  lt: {
+    iso: "lt",
+    title: "Литва",
+    countryCode: "+370",
+  },
+  gb: {
+    iso: "gb",
+    title: "Великобритания",
+    countryCode: "+44",
+  },
+};
+class FormFunctional {
+  constructor() {
+    this.generateFlags();
+  }
+  generateFlags() {
+    const flagList = document.querySelector(".js-form-flags__list");
+    for (let flag in flags) {
+      const li = document.createElement("li");
+      const flagSpan = this.createSpan(
+        "span",
+        "js-form-flags__list-item__flag",
+        "",
+        ["js-form-flags__list-item__flag", flags[flag].iso.toLowerCase()]
+      );
+      const titleSpan = this.createSpan(
+        "span",
+        "js-form-flags__list-item__name",
+        flags[flag].title
+      );
+      const countryCodeSpan = this.createSpan(
+        "span",
+        "js-form-flags__list-item__countryCode",
+        flags[flag].countryCode
+      );
+      li.appendChild(flagSpan);
+      li.appendChild(titleSpan);
+      li.appendChild(countryCodeSpan);
+      flagList.appendChild(li);
+    }
+  }
+  createSpan(tagName, className, textContent, classList = []) {
+    const span = document.createElement(tagName);
+    span.classList.add(className);
+    classList.forEach((cls) => span.classList.add(cls));
+    span.textContent = textContent;
+    return span;
+  }
+  addStyle() {
+    const head = document.querySelector("head");
+    const style = document.createElement("style");
+    style.textContent = `
+    .js-form-flags__list-item__flag.ee{
+      height: 13px;
+      background-position: -1467px 0px;
+    }
+    .js-form-flags__list-item__flag.lv{
+      height: 10px;
+      background-position: -3073px 0px;
+    }
+    .js-form-flags__list-item__flag.lt{
+      height: 12px;
+      background-position: -3029px 0px;
+    }
+    .js-form-flags__list-item__flag.gb{
+      height: 10px;
+      background-position: -1775px 0px;
+    }
+ 
+    `;
+  }
+}
+const formFlags = new FormFunctional();

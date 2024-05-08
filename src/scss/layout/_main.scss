@@ -127,7 +127,7 @@
 
 .give-currency__block-filter__search,
 .receive-currency__block-filter__search {
-  width: 100%;
+  max-width: 150px;
   outline: none;
   padding: 5px 10px;
   font-size: 13px;
@@ -211,11 +211,30 @@
     right: 0;
   }
 }
+.give-currency__block-list,
+.receive-currency__block-list {
+  padding-right: 5px;
+  padding-left: 5px;
+}
 // Give block
 
 .give-currency {
 }
 .give-currency__block {
+}
+.give-currency__box {
+  display: flex;
+  gap: 5px;
+}
+.give-currency__filter-selector {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-light-white);
+}
+.give-currency__filter-selector__text{
+
 }
 .give-currency__block-menu {
 }
@@ -278,15 +297,21 @@
   transition: var(--transition-standart);
   cursor: pointer;
   &:hover,
-  &:focus {
+  &:focus-within {
+    // Изменения будут применяться также, если есть фокус внутри элемента
     background-color: var(--color-white);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    height: 100%;
     box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
+
+    .network__list {
+      display: flex;
+      height: 100%;
+      background-color: white;
+      box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
+    }
   }
-  :hover .network__list {
-  display: flex;
-}
 }
 
 .give-currency__block-list__item-img {
@@ -324,10 +349,20 @@
   transition: var(--transition-standart);
   cursor: pointer;
   &:hover,
-  &:focus {
+  &:focus-within {
+    // Изменения будут применяться также, если есть фокус внутри элемента
     background-color: var(--color-white);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 100%;
     box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
+
+    .network__list {
+      display: flex;
+      height: 100%;
+      background-color: white;
+      box-shadow: 1px 2px 5px var(--color-black-coal-opacity);
+    }
   }
 }
 .receive-currency__block-list__item-img {
