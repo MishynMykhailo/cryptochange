@@ -22,7 +22,7 @@ export function images() {
     .pipe(minifyImages())
     .pipe(gulp.dest(path.build.images))
     // .pipe(webp())
-    .pipe(gulp.dest(path.build.images))
+    // .pipe(gulp.dest(path.build.images))
     .pipe(gulp.src(path.src.svg))
     .pipe(gulp.dest(path.build.images))
     .pipe(plugins.browsersync.stream());

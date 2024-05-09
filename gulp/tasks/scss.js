@@ -37,7 +37,7 @@ export function scss() {
     .pipe(plugins.replace(...listRegExpStyle.images))
     .pipe(sass(configSass))
     .pipe(groupCssMediaQueries())
-    .pipe(webpcss(configWebpCss))
+    // .pipe(webpcss(configWebpCss))
     .pipe(autoPrefixer(configAutoPrefixer))
     .pipe(gulp.dest(path.build.css))
     .pipe(cleanCss())

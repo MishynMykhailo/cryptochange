@@ -84,7 +84,7 @@
             <div class="give-currency__block-menu">
               <h2 class="give-currency__block-title">Отдаете</h2>
               <div class="give-currency__block-filter">
-               <div class="give-currency__box">
+                <div class="give-currency__box">
                   <ul
                     id="give-filter"
                     class="give-currency__block-filter__list"
@@ -120,7 +120,7 @@
 
                     </ul>
                   </div> -->
-               </div>
+                </div>
                 <div class="give-currency__search-filter">
                   <label
                     for="give-search-filter"
@@ -329,6 +329,7 @@
             <div class="users-info__block">
               <h2 class="users-info__block-title">Ваши реквизиты</h2>
               <form
+              id="orderForm"
                 class="users-info__form"
                 method="POST"
               >
@@ -366,14 +367,68 @@
                 </label>
                 <label class="users-info__form-label">
                   <p class="users-info__form-label__describe">Ваша страна</p>
-                  <input
-                    class="users-info__form-label__input"
-                    type="text"
-                    placeholder="Номер карты куда производить вывод"
-                  />
-                 <ul class="js-form-flags__list">
-                 <!-- Через JS добавляется -->
-                 </ul>
+
+                  <div class="custom__country-dropdown">
+                    <div class="custom__country-container">
+                      <div class="custom__country-select">
+                        <div class="custom__country-list-item__flag"></div>
+                        <div class="custom__country-arrow">▼</div>
+                      </div>
+                      <ul class="custom__country-list">
+                        <li
+                          class="custom__country-list-item"
+                          data-flag="ee"
+                        >
+                          <span
+                            class="custom__country-list-item__flag ee"
+                          ></span
+                          ><span class="custom__country-list-item__name"
+                            >Эстония</span
+                          >
+                        </li>
+                        <li
+                          class="custom__country-list-item"
+                          data-flag="lv"
+                        >
+                          <span
+                            class="custom__country-list-item__flag lv"
+                          ></span
+                          ><span class="custom__country-list-item__name"
+                            >Латвия</span
+                          >
+                        </li>
+                        <li
+                          class="custom__country-list-item"
+                          data-flag="lt"
+                        >
+                          <span
+                            class="custom__country-list-item__flag lt"
+                          ></span
+                          ><span class="custom__country-list-item__name"
+                            >Литва</span
+                          >
+                        </li>
+                        <li
+                          class="custom__country-list-item"
+                          data-flag="gb"
+                        >
+                          <span
+                            class="custom__country-list-item__flag gb"
+                          ></span
+                          ><span class="custom__country-list-item__name"
+                            >Великобритания</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <input
+                      class="users-info__form-label__input custom__country-input"
+                      type="text"
+                      id="country"
+                      name="country"
+                      placeholder="Ваша страна"
+                    />
+                  </div>
                 </label>
                 <label class="users-info__form-label__checkbox">
                   <input
