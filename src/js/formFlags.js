@@ -98,56 +98,61 @@
 // }
 // const formFlags = new FormFunctional();
 // console.log("first");
-
 class OpenDropDown {
   constructor() {
     const formElement = document.getElementById("orderForm");
-      const countryList = formElement.querySelector(".custom__country-list");
-    const countrySelect = formElement.querySelector(
+    this.countryList = formElement.querySelector(".custom__country-list");
+    this.countrySelect = formElement.querySelector(
       ".custom__country-select .custom__country-list-item__flag"
     );
     const arrowSelect = formElement.querySelector(
       ".custom__country-select .custom__country-arrow"
     );
-    const dropdown = formElement.querySelector(".custom__country-dropdown ");
-    countrySelect.addEventListener("click", this.toggleCountryList);
-    arrowSelect.addEventListener("click", this.toggleCountryList);
-    countryList.addEventListener("click", this.handleListItemClick);
-    arrowSelect.addEventListener("click", this.handleListItemClick);
-  }
-  handleDocumentClick = (event) => {
-    console.log("hi", this.countryList);
 
+    this.countrySelect.addEventListener("click", this.toggleCountryList);
+    arrowSelect.addEventListener("click", this.toggleCountryList);
+    this.countryList.addEventListener("click", this.handleListItemClick);
+    arrowSelect.addEventListener("click", this.handleListItemClick);
+
+    document.addEventListener("click", this.handleDocumentClick);
+  }
+
+  handleDocumentClick = (event) => {
     const target = event.target;
+    const dropdown = document.querySelector(".custom__country-dropdown");
+
     if (
       !dropdown.contains(target) &&
       !target.classList.contains("custom__country-list-item__flag")
     ) {
-      countryList.classList.remove("active");
-      document.removeEventListener("click", handleDocumentClick);
+      this.countryList.classList.remove("active");
+      document.removeEventListener("click", this.handleDocumentClick);
     }
   };
+
   toggleCountryList = (event) => {
-    console.log("hi");
+    const { countryList } = this;
     if (
       event.target.classList.contains("custom__country-list-item__flag") ||
       event.target.classList.contains("custom__country-arrow")
     ) {
       countryList.classList.toggle("active");
+
       if (countryList.classList.contains("active")) {
-        document.addEventListener("click", handleDocumentClick);
+        document.addEventListener("click", this.handleDocumentClick);
       } else {
-        document.removeEventListener("click", handleDocumentClick);
+        document.removeEventListener("click", this.handleDocumentClick);
       }
     }
   };
+
   handleListItemClick = (event) => {
     const listItem = event.target.closest(".custom__country-list-item");
     if (listItem) {
       this.flag = listItem.dataset.flag;
-      countrySelect.className = `custom__country-list-item__flag ${this.flag}`;
-      countryList.classList.remove("active");
-      document.removeEventListener("click", handleDocumentClick);
+      this.countrySelect.className = `custom__country-list-item__flag ${this.flag}`;
+      this.countryList.classList.remove("active");
+      document.removeEventListener("click", this.handleDocumentClick);
     }
   };
 }
