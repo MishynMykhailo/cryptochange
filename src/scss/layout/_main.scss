@@ -233,8 +233,7 @@
   font-weight: 600;
   color: var(--color-light-white);
 }
-.give-currency__filter-selector__text{
-
+.give-currency__filter-selector__text {
 }
 .give-currency__block-menu {
 }
@@ -376,7 +375,18 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.exchange-currency__block-calculator__give-field {
+  position: relative;
+}
+.choice-network__give {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translate(-10px, -50%);
+}
+.exchange-currency__block-calculator__give-field__input-network {
+  font-size: 13px;
+}
 .exchange-currency__block-calculator__give-field__input,
 .exchange-currency__block-calculator__receive-field__input {
 }
@@ -440,7 +450,7 @@
 .exchange-currency__block-calculator__give-field__input {
   width: 100%;
   border: none;
-  padding: 10px;
+  padding: 10px 60px 10px 10px;
   font-size: 16px;
   border-radius: 10px;
   outline: none;

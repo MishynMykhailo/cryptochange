@@ -283,6 +283,13 @@
                       type="text"
                       class="exchange-currency__block-calculator__give-field__input"
                     />
+                    <div class="choice-network__give">
+                      <p
+                        class="exchange-currency__block-calculator__give-field__input-network"
+                      >
+                        Сеть
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div class="exchange-currency__block-calculator__receive">
@@ -329,7 +336,7 @@
             <div class="users-info__block">
               <h2 class="users-info__block-title">Ваши реквизиты</h2>
               <form
-              id="orderForm"
+                id="orderForm"
                 class="users-info__form"
                 method="POST"
               >
@@ -375,6 +382,17 @@
                         <div class="custom__country-arrow">▼</div>
                       </div>
                       <ul class="custom__country-list">
+                         <li
+                          class="custom__country-list-item"
+                          data-flag=""
+                        >
+                          <span
+                            class="custom__country-list-item__flag "
+                          ></span
+                          ><span class="custom__country-list-item__name"
+                            >Уточнить менеджеру</span
+                          >
+                        </li>
                         <li
                           class="custom__country-list-item"
                           data-flag="ee"
@@ -427,6 +445,7 @@
                       id="country"
                       name="country"
                       placeholder="Ваша страна"
+                      readonly
                     />
                   </div>
                 </label>

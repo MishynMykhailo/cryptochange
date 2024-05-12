@@ -581,7 +581,9 @@ class CryptoList {
     errorMessage,
     textFilter
   ) {
-    const listItems = listElem.querySelectorAll("li");
+    const listItems = Array.from(listElem.children).filter(
+      (child) => child.tagName.toLowerCase() === "li"
+    );
     const notFoundMessage = document.getElementById(errorMessage);
     listItems.forEach((item) => {
       const itemType = item.getAttribute("data-type");
@@ -605,7 +607,6 @@ class CryptoList {
         foundItems = true;
       }
     });
-
     if (!foundItems) {
       notFoundMessage.style.display = "block";
     } else {
@@ -731,25 +732,48 @@ class ItemsChooise {
   listenerList() {
     if (this.listGiveElem && this.listReceiveElem) {
       this.listGiveElem.addEventListener("click", (e) => {
-        const listItem = e.target.closest("li");
+        const listItem = e.target.closest(".give-currency__block-list__item");
+
+        const networkList = listItem.querySelector(".network__list");
+        // Добавление сети
+        // console.log("target", e.target);
+        // console.log("currentTarget", e.currentTarget);
         if (
           listItem &&
           listItem.classList.contains("give-currency__block-list__item")
         ) {
+          let networkChoice = null;
+          if (
+            networkList &&
+            e.target !== e.target.closest(".network__list-item")
+          ) {
+            const children = networkList.children;
+            networkChoice = children[0].textContent;
+          } else {
+            const netwrokCurrent = e.target.closest(".network__list-item");
+            networkChoice = netwrokCurrent.textContent;
+          }
           const imgElement = listItem.querySelector("img").src;
           const pElement = listItem.querySelector("p").textContent;
-          this.currentChoiceGive = { img: imgElement, text: pElement };
+          this.currentChoiceGive = {
+            img: imgElement,
+            text: pElement,
+            networkChoice,
+          };
           this.changeExchange(
             "give-icon-header",
             "exchange-currency__block-calculator__give-header__icon-img",
             "exchange-currency__block-calculator__give-header__icon-text",
+            "exchange-currency__block-calculator__give-field__input-network",
             this.currentChoiceGive
           );
         }
       });
 
       this.listReceiveElem.addEventListener("click", (e) => {
-        const listItem = e.target.closest("li");
+        const listItem = e.target.closest(
+          ".receive-currency__block-list__item"
+        );
 
         if (
           listItem &&
@@ -758,19 +782,27 @@ class ItemsChooise {
           const imgElement = listItem.querySelector("img").src;
           const pElement = listItem.querySelector("p").textContent;
           this.currentChoiceReceive = { img: imgElement, text: pElement };
-          this.changeExchange(
-            "receive-icon-header",
-            "exchange-currency__block-calculator__receive-header__icon-img",
-            "exchange-currency__block-calculator__receive-header__icon-text",
-            this.currentChoiceReceive
-          );
+          // this.changeExchange(
+          //   "receive-icon-header",
+          //   "exchange-currency__block-calculator__receive-header__icon-img",
+          //   "exchange-currency__block-calculator__receive-header__icon-text",
+
+          //   this.currentChoiceReceive
+          // );
         }
       });
     }
   }
 
-  changeExchange(IdHeaderIcon, classNameImg, classNameText, choice) {
+  changeExchange(
+    IdHeaderIcon,
+    classNameImg,
+    classNameText,
+    classNameNetwork,
+    choice
+  ) {
     const container = document.getElementById(IdHeaderIcon);
+    // const network = document.getElementById(containerNetwork);
     container.textContent = "";
     const image = document.createElement("img");
     image.src = choice.img;
@@ -778,7 +810,8 @@ class ItemsChooise {
     const text = document.createElement("p");
     text.classList.add(classNameText);
     text.textContent = choice.text;
-
+    const networkCurrent = document.getElementsByClassName(classNameNetwork);
+    networkCurrent[0].textContent = choice.networkChoice
     container.appendChild(image);
     container.appendChild(text);
   }
