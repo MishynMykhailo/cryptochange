@@ -46,7 +46,9 @@
     padding: 20px;
   }
 }
-
+.exchange-currency{
+  margin-bottom: 15px;
+}
 .give-currency__block-filter__list,
 .receive-currency__block-filter__list {
   display: flex;
@@ -479,6 +481,11 @@
   color: gray;
 }
 // User info
+.form-styles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .users-info {
 }
 .users-info__block {
@@ -486,11 +493,7 @@
 .users-info__block-title {
   margin-bottom: 15px;
 }
-.users-info__form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+
 .users-info__form-label {
   display: flex;
   flex-direction: column;

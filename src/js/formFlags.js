@@ -49,9 +49,7 @@ class OpenDropDown {
   };
 
   handleListItemClick = (event) => {
-    const countryInput = document.querySelector(
-      ".custom__country-input"
-    );
+    const countryInput = document.querySelector(".custom__country-input");
     console.log(countryInput);
     const listItem = event.target.closest(".custom__country-list-item");
     if (listItem) {
@@ -64,4 +62,18 @@ class OpenDropDown {
   };
 }
 
+class FormValidation {
+  constructor() {
+    this.form = document.getElementById("orderForm");
+  }
+  submitForm() {
+    this.form.addEventListener("submit", (e) => {
+      console.log('hi')
+      e.preventDefault();
+    });
+  }
+}
+
 const openDropDown = new OpenDropDown();
+
+const formValidation = new FormValidation();

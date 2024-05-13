@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
+    <link rel='icon' type='image/x-icon' href='./images/favicon.svg'>
     <title>Быстрый обмен валют / bixter</title>
     <link
       rel="stylesheet"
@@ -30,7 +31,7 @@
       <div class="container header-cont">
         <div class="header__logo-block">
           <a
-            href=""
+            href="/"
             class="header__logo-block__link"
             ><svg
               width="110"
@@ -71,8 +72,11 @@
         </div>
         <nav class="header__nav">
           <ul class="header__nav-list">
-            <li class="header__nav-list__item"></li>
-            <li class="header__nav-list__item"></li>
+            <li class="header__nav-list__item">
+              <a href="/privacy.html" class="privacy-link">
+                AML/KYC
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -260,223 +264,241 @@
           </div>
         </div>
         <div class="main-cont__data">
-          <div class="exchange-currency">
-            <div class="exchange-currency__block">
-              <h2 class="exchange-currency__block-title">Данные обмена</h2>
-              <div class="exchange-currency__block-calculator">
-                <div class="exchange-currency__block-calculator__give">
-                  <div class="exchange-currency__block-calculator__give-header">
-                    <p
-                      class="exchange-currency__block-calculator__give-header__title"
-                    >
-                      Отдаёте
-                    </p>
+          <form
+            id="orderForm"
+            method="POST"
+            action="api.php"
+          >
+            <div class="exchange-currency">
+              <div class="exchange-currency__block">
+                <h2 class="exchange-currency__block-title">Данные обмена</h2>
+                <div class="exchange-currency__block-calculator">
+                  <div class="exchange-currency__block-calculator__give">
                     <div
-                      class="exchange-currency__block-calculator__give-header__icon"
-                      id="give-icon-header"
+                      class="exchange-currency__block-calculator__give-header"
                     >
-                      <p class="exchange-empty-currency">Пусто</p>
+                      <p
+                        class="exchange-currency__block-calculator__give-header__title"
+                      >
+                        Отдаёте
+                      </p>
+                      <div
+                        class="exchange-currency__block-calculator__give-header__icon"
+                        id="give-icon-header"
+                      >
+                        <p class="exchange-empty-currency">Пусто</p>
+                      </div>
+                    </div>
+                    <div
+                      class="exchange-currency__block-calculator__give-field"
+                    >
+                      <input
+                        type="text"
+                        name="giveMoney"
+                        id="form__give"
+                        class="exchange-currency__block-calculator__give-field__input"
+                      />
+                      <div class="choice-network__give">
+                        <p
+                          class="exchange-currency__block-calculator__give-field__input-network"
+                        >
+                          Сеть
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div class="exchange-currency__block-calculator__give-field">
-                    <input
-                      type="text"
-                      class="exchange-currency__block-calculator__give-field__input"
-                    />
-                    <div class="choice-network__give">
+                  <div class="exchange-currency__block-calculator__receive">
+                    <div
+                      class="exchange-currency__block-calculator__receive-header"
+                    >
                       <p
-                        class="exchange-currency__block-calculator__give-field__input-network"
+                        class="exchange-currency__block-calculator__receive-header__title"
                       >
-                        Сеть
+                        Получаете
+                      </p>
+                      <div
+                        class="exchange-currency__block-calculator__receive-header__icon"
+                        id="receive-icon-header"
+                      >
+                        <p class="exchange-empty-currency">Пусто</p>
+                      </div>
+                    </div>
+                    <div
+                      class="exchange-currency__block-calculator__receive-field"
+                    >
+                      <!-- <input
+                        type="text"
+                        class="exchange-currency__block-calculator__receive-field__input"
+                      /> -->
+                      <p
+                        class="exchange-currency__block-calculator__receive-field__message"
+                      >
+                        Вас проконсультирует менеджер
                       </p>
                     </div>
                   </div>
                 </div>
-                <div class="exchange-currency__block-calculator__receive">
-                  <div
-                    class="exchange-currency__block-calculator__receive-header"
-                  >
-                    <p
-                      class="exchange-currency__block-calculator__receive-header__title"
-                    >
-                      Получаете
-                    </p>
-                    <div
-                      class="exchange-currency__block-calculator__receive-header__icon"
-                      id="receive-icon-header"
-                    >
-                      <p class="exchange-empty-currency">Пусто</p>
-                    </div>
-                  </div>
-                  <div
-                    class="exchange-currency__block-calculator__receive-field"
-                  >
-                    <!-- <input
+              </div>
+              <!-- <p class="exchange-notification">
+                Пожалуйста, убедитесь, что вывод производится в рамках сети
+                TRC-20, в противном случае, средства не зачислятся на наш кошелек
+                Чтобы воспользоваться переводом через СБП, Ваша карта должна быть
+                подключена к Системе Быстрых Платежей!
+              </p> -->
+            </div>
+
+            <div class="users-info">
+              <div class="users-info__block">
+                <h2 class="users-info__block-title">Ваши реквизиты</h2>
+                <div class="form-styles">
+                  <label class="users-info__form-label">
+                    <p class="users-info__form-label__describe">E-mail</p>
+                    <input
+                      class="users-info__form-label__input"
                       type="text"
-                      class="exchange-currency__block-calculator__receive-field__input"
-                    /> -->
-                    <p
-                      class="exchange-currency__block-calculator__receive-field__message"
-                    >
-                      Вас проконсультирует менеджер
+                      name="email"
+                      id="form__email"
+                      placeholder="E-mail"
+                    />
+                  </label>
+                  <label class="users-info__form-label">
+                    <p class="users-info__form-label__describe">
+                      ФИО получателя
                     </p>
-                  </div>
+                    <input
+                      class="users-info__form-label__input"
+                      type="text"
+                      name="name"
+                      id="form__name"
+                      placeholder="ФИО получателя"
+                    />
+                  </label>
+                  <label class="users-info__form-label">
+                    <p class="users-info__form-label__describe">
+                      Номер телефона
+                    </p>
+                    <input
+                      class="users-info__form-label__input"
+                      type="tel"
+                      name="phone"
+                      id="form__tel"
+                      placeholder="Номер телефона"
+                    />
+                  </label>
+                  <label class="users-info__form-label">
+                    <p class="users-info__form-label__describe">Номер карты</p>
+                    <input
+                      class="users-info__form-label__input"
+                      type="text"
+                        name="card"
+                      id="form__card"
+                      placeholder="Номер карты куда производить вывод"
+                    />
+                  </label>
+                  <label class="users-info__form-label">
+                    <p class="users-info__form-label__describe">Ваша страна</p>
+
+                    <div class="custom__country-dropdown">
+                      <div class="custom__country-container">
+                        <div class="custom__country-select">
+                          <div class="custom__country-list-item__flag"></div>
+                          <div class="custom__country-arrow">▼</div>
+                        </div>
+                        <ul class="custom__country-list">
+                          <li
+                            class="custom__country-list-item"
+                            data-flag=""
+                          >
+                            <span class="custom__country-list-item__flag"></span
+                            ><span class="custom__country-list-item__name"
+                              >Уточнить менеджеру</span
+                            >
+                          </li>
+                          <li
+                            class="custom__country-list-item"
+                            data-flag="ee"
+                          >
+                            <span
+                              class="custom__country-list-item__flag ee"
+                            ></span
+                            ><span class="custom__country-list-item__name"
+                              >Эстония</span
+                            >
+                          </li>
+                          <li
+                            class="custom__country-list-item"
+                            data-flag="lv"
+                          >
+                            <span
+                              class="custom__country-list-item__flag lv"
+                            ></span
+                            ><span class="custom__country-list-item__name"
+                              >Латвия</span
+                            >
+                          </li>
+                          <li
+                            class="custom__country-list-item"
+                            data-flag="lt"
+                          >
+                            <span
+                              class="custom__country-list-item__flag lt"
+                            ></span
+                            ><span class="custom__country-list-item__name"
+                              >Литва</span
+                            >
+                          </li>
+                          <li
+                            class="custom__country-list-item"
+                            data-flag="gb"
+                          >
+                            <span
+                              class="custom__country-list-item__flag gb"
+                            ></span
+                            ><span class="custom__country-list-item__name"
+                              >Великобритания</span
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <input
+                        class="users-info__form-label__input custom__country-input"
+                        type="text"
+                        id="country"
+                        name="country"
+                        placeholder="Ваша страна"
+                        readonly
+                      />
+                    </div>
+                  </label>
+                  <label class="users-info__form-label__checkbox">
+                    <input
+                      class="users-info__form-label__checkbox-field"
+                      type="checkbox"
+                    />
+                    <p class="users-info__form-label__checkbox-text">
+                      Я согласен на обработку персональных данных и принимаю
+                      правила обмена
+                    </p>
+                  </label>
+                  <label class="users-info__form-label__checkbox">
+                    <input
+                      class="users-info__form-label__checkbox-field"
+                      type="checkbox"
+                    />
+                    <p class="users-info__form-label__checkbox-text">
+                      Я согласен с процедурой KYC и AML
+                    </p>
+                  </label>
+                  <button
+                    type="submit"
+                    class="users-info__form-submit"
+                  >
+                    Получить косультанцию
+                  </button>
                 </div>
               </div>
             </div>
-            <!-- <p class="exchange-notification">
-              Пожалуйста, убедитесь, что вывод производится в рамках сети
-              TRC-20, в противном случае, средства не зачислятся на наш кошелек
-              Чтобы воспользоваться переводом через СБП, Ваша карта должна быть
-              подключена к Системе Быстрых Платежей!
-            </p> -->
-          </div>
-
-          <div class="users-info">
-            <div class="users-info__block">
-              <h2 class="users-info__block-title">Ваши реквизиты</h2>
-              <form
-                id="orderForm"
-                class="users-info__form"
-                method="POST"
-              >
-                <label class="users-info__form-label">
-                  <p class="users-info__form-label__describe">E-mail</p>
-                  <input
-                    class="users-info__form-label__input"
-                    type="text"
-                    placeholder="E-mail"
-                  />
-                </label>
-                <label class="users-info__form-label">
-                  <p class="users-info__form-label__describe">ФИО получателя</p>
-                  <input
-                    class="users-info__form-label__input"
-                    type="text"
-                    placeholder="ФИО получателя"
-                  />
-                </label>
-                <label class="users-info__form-label">
-                  <p class="users-info__form-label__describe">Номер телефона</p>
-                  <input
-                    class="users-info__form-label__input"
-                    type="text"
-                    placeholder="Номер телефона"
-                  />
-                </label>
-                <label class="users-info__form-label">
-                  <p class="users-info__form-label__describe">Номер карты</p>
-                  <input
-                    class="users-info__form-label__input"
-                    type="text"
-                    placeholder="Номер карты куда производить вывод"
-                  />
-                </label>
-                <label class="users-info__form-label">
-                  <p class="users-info__form-label__describe">Ваша страна</p>
-
-                  <div class="custom__country-dropdown">
-                    <div class="custom__country-container">
-                      <div class="custom__country-select">
-                        <div class="custom__country-list-item__flag"></div>
-                        <div class="custom__country-arrow">▼</div>
-                      </div>
-                      <ul class="custom__country-list">
-                         <li
-                          class="custom__country-list-item"
-                          data-flag=""
-                        >
-                          <span
-                            class="custom__country-list-item__flag "
-                          ></span
-                          ><span class="custom__country-list-item__name"
-                            >Уточнить менеджеру</span
-                          >
-                        </li>
-                        <li
-                          class="custom__country-list-item"
-                          data-flag="ee"
-                        >
-                          <span
-                            class="custom__country-list-item__flag ee"
-                          ></span
-                          ><span class="custom__country-list-item__name"
-                            >Эстония</span
-                          >
-                        </li>
-                        <li
-                          class="custom__country-list-item"
-                          data-flag="lv"
-                        >
-                          <span
-                            class="custom__country-list-item__flag lv"
-                          ></span
-                          ><span class="custom__country-list-item__name"
-                            >Латвия</span
-                          >
-                        </li>
-                        <li
-                          class="custom__country-list-item"
-                          data-flag="lt"
-                        >
-                          <span
-                            class="custom__country-list-item__flag lt"
-                          ></span
-                          ><span class="custom__country-list-item__name"
-                            >Литва</span
-                          >
-                        </li>
-                        <li
-                          class="custom__country-list-item"
-                          data-flag="gb"
-                        >
-                          <span
-                            class="custom__country-list-item__flag gb"
-                          ></span
-                          ><span class="custom__country-list-item__name"
-                            >Великобритания</span
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <input
-                      class="users-info__form-label__input custom__country-input"
-                      type="text"
-                      id="country"
-                      name="country"
-                      placeholder="Ваша страна"
-                      readonly
-                    />
-                  </div>
-                </label>
-                <label class="users-info__form-label__checkbox">
-                  <input
-                    class="users-info__form-label__checkbox-field"
-                    type="checkbox"
-                  />
-                  <p class="users-info__form-label__checkbox-text">
-                    Я согласен на обработку персональных данных и принимаю
-                    правила обмена
-                  </p>
-                </label>
-                <label class="users-info__form-label__checkbox">
-                  <input
-                    class="users-info__form-label__checkbox-field"
-                    type="checkbox"
-                  />
-                  <p class="users-info__form-label__checkbox-text">
-                    Я согласен с процедурой KYC и AML
-                  </p>
-                </label>
-                <button
-                  type="submit"
-                  class="users-info__form-submit"
-                >
-                  Получить косультанцию
-                </button>
-              </form>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </main>

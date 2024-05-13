@@ -782,13 +782,13 @@ class ItemsChooise {
           const imgElement = listItem.querySelector("img").src;
           const pElement = listItem.querySelector("p").textContent;
           this.currentChoiceReceive = { img: imgElement, text: pElement };
-          // this.changeExchange(
-          //   "receive-icon-header",
-          //   "exchange-currency__block-calculator__receive-header__icon-img",
-          //   "exchange-currency__block-calculator__receive-header__icon-text",
-
-          //   this.currentChoiceReceive
-          // );
+          this.changeExchange(
+            "receive-icon-header",
+            "exchange-currency__block-calculator__receive-header__icon-img",
+            "exchange-currency__block-calculator__receive-header__icon-text",
+            "",
+            this.currentChoiceReceive
+          );
         }
       });
     }
@@ -802,7 +802,6 @@ class ItemsChooise {
     choice
   ) {
     const container = document.getElementById(IdHeaderIcon);
-    // const network = document.getElementById(containerNetwork);
     container.textContent = "";
     const image = document.createElement("img");
     image.src = choice.img;
@@ -810,8 +809,10 @@ class ItemsChooise {
     const text = document.createElement("p");
     text.classList.add(classNameText);
     text.textContent = choice.text;
-    const networkCurrent = document.getElementsByClassName(classNameNetwork);
-    networkCurrent[0].textContent = choice.networkChoice
+    if (classNameNetwork.length > 1) {
+      const networkCurrent = document.getElementsByClassName(classNameNetwork);
+      networkCurrent[0].textContent = choice.networkChoice;
+    }
     container.appendChild(image);
     container.appendChild(text);
   }

@@ -19,3 +19,14 @@
   font-size: 12px;
 }
 
+.privacy-link {
+  background: rgb(217, 231, 232);
+  color: rgb(57, 62, 70);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 13px;
+    transition: var(--transition-standart);
+  &:hover,&:focus{
+      background: rgb(202, 216, 217);
+  }
+}

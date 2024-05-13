@@ -17,25 +17,25 @@ html::-webkit-scrollbar-thumb:hover {
   background: var(--color-black-coal);
 }
 .give-currency__block-list,
-.receive-currency__block-list {
+.receive-currency__block-list,
+.privacy-cont {
   &::-webkit-scrollbar {
     width: 5px;
   }
 
   /* Track */
   &::-webkit-scrollbar-track {
-    background: #EDF2F2;
+    background: #edf2f2;
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #D9DFDF;
+    background: #d9dfdf;
     border-radius: 4px;
-
   }
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: #BCCACB;
+    background: #bccacb;
   }
 }
