@@ -62,18 +62,8 @@ class OpenDropDown {
   };
 }
 
-class FormValidation {
-  constructor() {
-    this.form = document.getElementById("orderForm");
-  }
-  submitForm() {
-    this.form.addEventListener("submit", (e) => {
-      console.log('hi')
-      e.preventDefault();
-    });
-  }
-}
+
 
 const openDropDown = new OpenDropDown();
 
-const formValidation = new FormValidation();
+

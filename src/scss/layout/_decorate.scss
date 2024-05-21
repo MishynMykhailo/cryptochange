@@ -17,6 +17,12 @@
 }
 .network__list-item {
   font-size: 12px;
+  color: #393E46;
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    color: var(--color-aqua);
+  }
 }
 
 .privacy-link {
@@ -25,8 +31,9 @@
   padding: 10px 15px;
   border-radius: 6px;
   font-size: 13px;
-    transition: var(--transition-standart);
-  &:hover,&:focus{
-      background: rgb(202, 216, 217);
+  transition: var(--transition-standart);
+  &:hover,
+  &:focus {
+    background: rgb(202, 216, 217);
   }
 }

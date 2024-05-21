@@ -2,7 +2,7 @@
   display: flex;
   gap: 15px;
   justify-content: space-between;
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
   }
   @media screen and (min-width: 480px) {
@@ -33,7 +33,7 @@
 .users-info {
   border-radius: 12px;
   background-color: var(--color-white);
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 480px) {
     padding: 10px;
   }
   @media screen and (min-width: 480px) {
@@ -46,7 +46,7 @@
     padding: 20px;
   }
 }
-.exchange-currency{
+.exchange-currency {
   margin-bottom: 15px;
 }
 .give-currency__block-filter__list,
@@ -62,7 +62,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 480px) {
   }
   @media screen and (min-width: 480px) {
   }
@@ -91,7 +91,7 @@
 .receive-currency__block-list {
   padding: 10px 0px;
 
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     max-height: 400px;
@@ -106,10 +106,12 @@
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+       max-height: 800px;
   }
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+       max-height: 800px;
   }
 }
 .give-currency__block-list__item-text,
@@ -129,7 +131,7 @@
 
 .give-currency__block-filter__search,
 .receive-currency__block-filter__search {
-  max-width: 150px;
+ 
   outline: none;
   padding: 5px 10px;
   font-size: 13px;
@@ -148,6 +150,13 @@
     box-shadow: rgba(4, 44, 46, 0.4) 0px 6px 12px -8px,
       rgba(4, 44, 46, 0.06) 0px 1px 8px;
   }
+
+  @media screen and (max-width: 767px) {
+    width:100%
+  }
+  @media screen and (min-width:768px) {
+    max-width: 150px;
+  }
 }
 .give-currency__block-title,
 .receive-currency__block-title,
@@ -162,7 +171,7 @@
 .receive-currency__block-menu {
   display: flex;
 
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
     gap: 15px;
   }
@@ -191,6 +200,7 @@
   display: flex;
   gap: 5px;
   align-items: center;
+  cursor: pointer;
 }
 .give-currency__block-menu,
 .receive-currency__block-menu {
@@ -198,7 +208,7 @@
 }
 .give-currency__search-filter,
 .receive-currency__search-filter {
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 480px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -276,6 +286,7 @@
 .give-currency__block-filter {
 }
 .give-currency__block-filter__list {
+  cursor: pointer;
 }
 .give-currency__block-filter__list-item {
   &.active {
@@ -486,6 +497,12 @@
   flex-direction: column;
   gap: 10px;
 }
+.user-info__form-error__message {
+  color: red;
+  font-weight: 600;
+  text-align: center;
+  min-height: 20px;
+}
 .users-info {
 }
 .users-info__block {
@@ -521,6 +538,7 @@
   gap: 5px;
 }
 .users-info__form-label__checkbox-field {
+  outline: none;
 }
 .users-info__form-label__checkbox-text {
   font-size: 12px;

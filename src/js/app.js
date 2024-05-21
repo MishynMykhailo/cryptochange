@@ -69,7 +69,10 @@ const data = [
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -112,9 +115,10 @@ const data = [
     type: 2,
     fromNotice: null,
     currencies: [
-      { id: 10, name: "USD", code: "USD", network: null, inputs: [] },
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-      { id: 11, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -124,9 +128,10 @@ const data = [
     type: 2,
     fromNotice: null,
     currencies: [
-      { id: 10, name: "USD", code: "USD", network: null, inputs: [] },
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-      { id: 11, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -169,7 +174,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -190,10 +198,10 @@ const data = [
     type: 2,
     fromNotice: null,
     currencies: [
-      { id: 10, name: "USD", code: "USD", network: null, inputs: [] },
-      { id: 11, name: "EUR", code: "EUR", network: null, inputs: [] },
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-      { id: 57, name: "KZT", code: "KZT", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -213,7 +221,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -223,8 +234,10 @@ const data = [
     type: 2,
     fromNotice: null,
     currencies: [
-      { id: 10, name: "USD", code: "USD", network: null, inputs: [] },
-      { id: 11, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -234,7 +247,10 @@ const data = [
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -255,7 +271,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -265,7 +284,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -275,33 +297,10 @@ const data = [
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 35, name: "RUB", code: "RUB", network: null, inputs: [] },
-      { id: 81, name: "CAD", code: "CAD", network: null, inputs: [] },
-      { id: 82, name: "DKK", code: "DKK", network: null, inputs: [] },
-      { id: 84, name: "NOK", code: "NOK", network: null, inputs: [] },
-      { id: 83, name: "HUF", code: "HUF", network: null, inputs: [] },
-      { id: 78, name: "RON", code: "RON", network: null, inputs: [] },
-      { id: 88, name: "CZK", code: "CZK", network: null, inputs: [] },
-      { id: 92, name: "BGN", code: "BGN", network: null, inputs: [] },
-      { id: 85, name: "CHF", code: "CHF", network: null, inputs: [] },
-      { id: 87, name: "NZD", code: "NZD", network: null, inputs: [] },
-      { id: 10, name: "USD", code: "USD", network: null, inputs: [] },
-      { id: 11, name: "EUR", code: "EUR", network: null, inputs: [] },
-      { id: 63, name: "INR", code: "INR", network: null, inputs: [] },
-      { id: 101, name: "KRW", code: "KRW", network: null, inputs: [] },
-      { id: 93, name: "BRL", code: "BRL", network: null, inputs: [] },
-      { id: 80, name: "AUD", code: "AUD", network: null, inputs: [] },
-      { id: 99, name: "HKD", code: "HKD", network: null, inputs: [] },
-      { id: 109, name: "SGD", code: "SGD", network: null, inputs: [] },
-      { id: 113, name: "VND", code: "VND", network: null, inputs: [] },
-      { id: 91, name: "AZN", code: "AZN", network: null, inputs: [] },
-      { id: 57, name: "KZT", code: "KZT", network: null, inputs: [] },
-      { id: 59, name: "GBP", code: "GBP", network: null, inputs: [] },
-      { id: 62, name: "PLN", code: "PLN", network: null, inputs: [] },
-      { id: 65, name: "SEK", code: "SEK", network: null, inputs: [] },
-      { id: 58, name: "MDL", code: "MDL", network: null, inputs: [] },
-      { id: 183, name: "BYN", code: "BYN", network: null, inputs: [] },
-      { id: 184, name: "AMD", code: "AMD", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -358,7 +357,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -412,7 +414,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -422,7 +427,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -432,7 +440,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -442,7 +453,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -452,7 +466,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -462,7 +479,10 @@ const data = [
     type: 0,
     fromNotice: "Прием средств возможен на карты других банков.",
     currencies: [
-      { id: 35, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
 
@@ -473,7 +493,10 @@ const data = [
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 11, name: "EUR", code: "EUR", network: null, inputs: [] },
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
     ],
   },
   {
@@ -766,6 +789,8 @@ class ItemsChooise {
                 "give-icon-header",
                 "exchange-currency__block-calculator__give-header__icon-img",
                 "exchange-currency__block-calculator__give-header__icon-text",
+                "exchange-currency__give-input-currentCurrency",
+                "exchange-currency__give-input-currentNetwork",
                 "exchange-currency__block-calculator__give-field__input-network",
                 this.currentChoiceGive
               );
@@ -794,6 +819,8 @@ class ItemsChooise {
               "receive-icon-header",
               "exchange-currency__block-calculator__receive-header__icon-img",
               "exchange-currency__block-calculator__receive-header__icon-text",
+              "exchange-currency__receive-input-currentCurrency",
+              "exchange-currency__receive-input-currentNetwork",
               "",
               this.currentChoiceReceive
             );
@@ -807,22 +834,21 @@ class ItemsChooise {
     IdHeaderIcon,
     classNameImg,
     classNameText,
+    classCurrentCrypto,
+    classCurrenyNetwork,
     classNameNetwork,
     choice
   ) {
-    const container = document.getElementById(IdHeaderIcon);
-    container.textContent = "";
-    const image = document.createElement("img");
-    image.src = choice.img;
-    image.classList.add(classNameImg);
-    const text = document.createElement("p");
-    text.classList.add(classNameText);
+    // container.textContent = "";
+    const img = document.getElementsByClassName(classNameImg)[0];
+    img.src = choice.img;
+    const text = document.getElementsByClassName(classNameText)[0];
     text.textContent = choice.text;
-    const inputCrypto = document.createElement("input");
+    const inputCrypto = document.getElementsByClassName(classCurrentCrypto)[0];
     inputCrypto.value = choice.text;
     inputCrypto.name = "currentCurrency";
-    inputCrypto.type = "hidden";
-    const inputNetwork = document.createElement("input");
+    const inputNetwork =
+      document.getElementsByClassName(classCurrenyNetwork)[0];
     inputNetwork.name = "currentNetwork";
     inputNetwork.type = "hidden";
     if (classNameNetwork.length > 1) {
@@ -830,10 +856,6 @@ class ItemsChooise {
       networkCurrent[0].textContent = choice.networkChoice;
       inputNetwork.value = choice.networkChoice;
     }
-    container.appendChild(image);
-    container.appendChild(text);
-    container.appendChild(inputCrypto);
-    container.appendChild(inputNetwork);
   }
 }
 

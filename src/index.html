@@ -6,9 +6,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <link rel='icon' type='image/x-icon' href='./images/favicon.svg'>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/favicon.svg"
+    />
     <title>Быстрый обмен валют / bixter</title>
-    
+
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -26,6 +30,7 @@
       rel="stylesheet"
       href="./css/styles.css"
     />
+    <script src="//code.tidio.co/4yr1lxwyw1yrjav4onk3a1tmbnuyq0bp.js" async></script>
   </head>
   <body>
     <header>
@@ -74,7 +79,10 @@
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li class="header__nav-list__item">
-              <a href="/privacy.html" class="privacy-link">
+              <a
+                href="/privacy.html"
+                class="privacy-link"
+              >
                 AML/KYC
               </a>
             </li>
@@ -287,7 +295,29 @@
                         class="exchange-currency__block-calculator__give-header__icon"
                         id="give-icon-header"
                       >
-                        <p class="exchange-empty-currency">Пусто</p>
+                        <img
+                          src=""
+                          class="exchange-currency__block-calculator__give-header__icon-img"
+                        />
+                        <p
+                          class="exchange-currency__block-calculator__give-header__icon-text"
+                        >
+                          Пусто
+                        </p>
+                        <input
+                          class="exchange-currency__give-input-currentCurrency"
+                          name="giveCurrentCurrency"
+                          id="giveCurrentCurrency"
+                          type="hidden"
+                          value=""
+                        />
+                        <input
+                          class="exchange-currency__give-input-currentNetwork"
+                          name="giveNetworkCurrency"
+                          id="giveNetworkCurrency"
+                          type="hidden"
+                          value=""
+                        />
                       </div>
                     </div>
                     <div
@@ -321,7 +351,28 @@
                         class="exchange-currency__block-calculator__receive-header__icon"
                         id="receive-icon-header"
                       >
-                        <p class="exchange-empty-currency">Пусто</p>
+                         <img
+                          src=""
+                          class="exchange-currency__block-calculator__receive-header__icon-img"
+                        />
+                        <p
+                          class="exchange-currency__block-calculator__receive-header__icon-text"
+                        >
+                          Пусто
+                        </p>
+                        <input
+                          class="exchange-currency__receive-input-currentCurrency"
+                          name="receiveCurrentCurrency"
+                          id="receiveCurrentCurrency"
+                          type="hidden"
+                          value=""
+                        />
+                        <input
+                          class="exchange-currency__receive-input-currentNetwork"
+                          name="receiveNetworkCurrency"
+                          type="hidden"
+                          value=""
+                        />
                       </div>
                     </div>
                     <div
@@ -356,10 +407,11 @@
                     <p class="users-info__form-label__describe">E-mail</p>
                     <input
                       class="users-info__form-label__input"
-                      type="text"
+                      type="email"
                       name="email"
                       id="form__email"
                       placeholder="E-mail"
+                      required
                     />
                   </label>
                   <label class="users-info__form-label">
@@ -372,6 +424,7 @@
                       name="name"
                       id="form__name"
                       placeholder="ФИО получателя"
+                      required
                     />
                   </label>
                   <label class="users-info__form-label">
@@ -384,6 +437,7 @@
                       name="phone"
                       id="form__tel"
                       placeholder="Номер телефона"
+                      required
                     />
                   </label>
                   <label class="users-info__form-label">
@@ -391,9 +445,10 @@
                     <input
                       class="users-info__form-label__input"
                       type="text"
-                        name="card"
+                      name="card"
                       id="form__card"
                       placeholder="Номер карты куда производить вывод"
+                      
                     />
                   </label>
                   <label class="users-info__form-label">
@@ -475,6 +530,8 @@
                     <input
                       class="users-info__form-label__checkbox-field"
                       type="checkbox"
+                      checked
+                      required
                     />
                     <p class="users-info__form-label__checkbox-text">
                       Я согласен на обработку персональных данных и принимаю
@@ -485,11 +542,14 @@
                     <input
                       class="users-info__form-label__checkbox-field"
                       type="checkbox"
+                      checked
+                      required
                     />
                     <p class="users-info__form-label__checkbox-text">
                       Я согласен с процедурой KYC и AML
                     </p>
                   </label>
+                  <p class="user-info__form-error__message" id="form__error"></p>
                   <button
                     type="submit"
                     class="users-info__form-submit"

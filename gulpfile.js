@@ -30,6 +30,7 @@ import { zip } from "./gulp/tasks/zip.js";
 // Watching on the "srcFolder"
 function watcher() {
   gulp.watch(path.watch.files, copy);
+  gulp.watch(path.watch.php, copy);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
