@@ -734,39 +734,43 @@ class ItemsChooise {
       this.listGiveElem.addEventListener("click", (e) => {
         const listItem = e.target.closest(".give-currency__block-list__item");
 
-        const networkList = listItem.querySelector(".network__list");
-        // Добавление сети
-        // console.log("target", e.target);
-        // console.log("currentTarget", e.currentTarget);
-        if (
-          listItem &&
-          listItem.classList.contains("give-currency__block-list__item")
-        ) {
-          let networkChoice = null;
-          if (
-            networkList &&
-            e.target !== e.target.closest(".network__list-item")
-          ) {
-            const children = networkList.children;
-            networkChoice = children[0].textContent;
-          } else {
-            const netwrokCurrent = e.target.closest(".network__list-item");
-            networkChoice = netwrokCurrent.textContent;
+        if (listItem) {
+          const networkList = listItem.querySelector(".network__list");
+
+          if (listItem.classList.contains("give-currency__block-list__item")) {
+            let networkChoice = null;
+            if (
+              networkList &&
+              e.target !== e.target.closest(".network__list-item")
+            ) {
+              const children = networkList.children;
+              if (children.length > 0) {
+                networkChoice = children[0].textContent;
+              }
+            } else {
+              const networkCurrent = e.target.closest(".network__list-item");
+              if (networkCurrent) {
+                networkChoice = networkCurrent.textContent;
+              }
+            }
+
+            const imgElement = listItem.querySelector("img");
+            const pElement = listItem.querySelector("p");
+            if (imgElement && pElement) {
+              this.currentChoiceGive = {
+                img: imgElement.src,
+                text: pElement.textContent,
+                networkChoice,
+              };
+              this.changeExchange(
+                "give-icon-header",
+                "exchange-currency__block-calculator__give-header__icon-img",
+                "exchange-currency__block-calculator__give-header__icon-text",
+                "exchange-currency__block-calculator__give-field__input-network",
+                this.currentChoiceGive
+              );
+            }
           }
-          const imgElement = listItem.querySelector("img").src;
-          const pElement = listItem.querySelector("p").textContent;
-          this.currentChoiceGive = {
-            img: imgElement,
-            text: pElement,
-            networkChoice,
-          };
-          this.changeExchange(
-            "give-icon-header",
-            "exchange-currency__block-calculator__give-header__icon-img",
-            "exchange-currency__block-calculator__give-header__icon-text",
-            "exchange-currency__block-calculator__give-field__input-network",
-            this.currentChoiceGive
-          );
         }
       });
 
@@ -779,16 +783,21 @@ class ItemsChooise {
           listItem &&
           listItem.classList.contains("receive-currency__block-list__item")
         ) {
-          const imgElement = listItem.querySelector("img").src;
-          const pElement = listItem.querySelector("p").textContent;
-          this.currentChoiceReceive = { img: imgElement, text: pElement };
-          this.changeExchange(
-            "receive-icon-header",
-            "exchange-currency__block-calculator__receive-header__icon-img",
-            "exchange-currency__block-calculator__receive-header__icon-text",
-            "",
-            this.currentChoiceReceive
-          );
+          const imgElement = listItem.querySelector("img");
+          const pElement = listItem.querySelector("p");
+          if (imgElement && pElement) {
+            this.currentChoiceReceive = {
+              img: imgElement.src,
+              text: pElement.textContent,
+            };
+            this.changeExchange(
+              "receive-icon-header",
+              "exchange-currency__block-calculator__receive-header__icon-img",
+              "exchange-currency__block-calculator__receive-header__icon-text",
+              "",
+              this.currentChoiceReceive
+            );
+          }
         }
       });
     }
@@ -809,12 +818,22 @@ class ItemsChooise {
     const text = document.createElement("p");
     text.classList.add(classNameText);
     text.textContent = choice.text;
+    const inputCrypto = document.createElement("input");
+    inputCrypto.value = choice.text;
+    inputCrypto.name = "currentCurrency";
+    inputCrypto.type = "hidden";
+    const inputNetwork = document.createElement("input");
+    inputNetwork.name = "currentNetwork";
+    inputNetwork.type = "hidden";
     if (classNameNetwork.length > 1) {
       const networkCurrent = document.getElementsByClassName(classNameNetwork);
       networkCurrent[0].textContent = choice.networkChoice;
+      inputNetwork.value = choice.networkChoice;
     }
     container.appendChild(image);
     container.appendChild(text);
+    container.appendChild(inputCrypto);
+    container.appendChild(inputNetwork);
   }
 }
 
