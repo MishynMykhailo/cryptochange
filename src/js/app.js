@@ -1,6 +1,19 @@
 // TRC20,BEP20,ERC20,SOL,POLYGON
 const data = [
   {
+    id: 21,
+    name: "Наличные",
+    className: "cash",
+    type: 0,
+    fromNotice: null,
+    currencies: [
+      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
+      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
+      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
+      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
+    ],
+  },
+  {
     id: 305,
     name: "Tether",
     className: "TetherNew",
