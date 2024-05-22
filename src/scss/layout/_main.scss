@@ -81,6 +81,9 @@
 .give-currency__block-filter__list-item {
   padding: 3px;
   align-items: center;
+  &.active {
+    color: var(--color-aqua);
+  }
 }
 .exchange-currency__block-calculator__give-header,
 .exchange-currency__block-calculator__receive-header {
@@ -106,12 +109,12 @@
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-       max-height: 800px;
+    max-height: 800px;
   }
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-       max-height: 800px;
+    max-height: 800px;
   }
 }
 .give-currency__block-list__item-text,
@@ -131,7 +134,6 @@
 
 .give-currency__block-filter__search,
 .receive-currency__block-filter__search {
- 
   outline: none;
   padding: 5px 10px;
   font-size: 13px;
@@ -152,9 +154,9 @@
   }
 
   @media screen and (max-width: 767px) {
-    width:100%
+    width: 100%;
   }
-  @media screen and (min-width:768px) {
+  @media screen and (min-width: 768px) {
     max-width: 150px;
   }
 }
@@ -289,9 +291,6 @@
   cursor: pointer;
 }
 .give-currency__block-filter__list-item {
-  &.active {
-    color: var(--color-aqua);
-  }
 }
 
 .give-currency__block-filter__search {

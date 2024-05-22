@@ -7,10 +7,9 @@ const data = [
     type: 0,
     fromNotice: null,
     currencies: [
-      { id: 10, name: "EE", code: "EE", network: "EE", inputs: [] },
-      { id: 35, name: "LV", code: "LV", network: "LV", inputs: [] },
-      { id: 11, name: "LT", code: "LT", network: "LT", inputs: [] },
-      { id: 11, name: "GB", code: "GB", network: "GB", inputs: [] },
+      { id: 10, name: "EUR", code: "EUR", network: "EUR", inputs: [] },
+      { id: 35, name: "USD", code: "USD", network: "USD", inputs: [] },
+      { id: 35, name: "£", code: "£", network: "£", inputs: [] },
     ],
   },
   {
@@ -696,7 +695,14 @@ class CryptoList {
     });
 
     receiveFilter.addEventListener("click", (e) => {
-      const id = e.target.dataset.id;
+      const currentTargetElem = e.currentTarget;
+      const targetElem = e.target;
+      const childrenLi = currentTargetElem.children;
+      for (let i = 0; i < childrenLi.length; i++) {
+        childrenLi[i].classList.remove("active");
+      }
+      e.target.classList.add("active");
+      const id = targetElem.dataset.id;
       switch (id) {
         case "all":
           this.typeReceiveArray = null;
