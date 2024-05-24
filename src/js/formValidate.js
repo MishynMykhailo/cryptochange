@@ -119,16 +119,16 @@ class ValidateForm {
     }
   }
 }
-const validateForm = new ValidateForm({
-  formId: "orderForm",
-  nameId: "form__name",
-  emailId: "form__email",
-  phoneId: "form__tel",
-  cardId: "form__card",
-  countryId: "country",
-  giveId: "form__give",
-  giveCurrentCurrencyId: "giveCurrentCurrency",
-  giveNetworkCurrencyId: "giveNetworkCurrency",
-  receiveCurrentCurrencyId: "receiveCurrentCurrency",
-  errorMessage: "form__error",
-});
+// const validateForm = new ValidateForm({
+//   formId: "orderForm",
+//   nameId: "form__name",
+//   emailId: "form__email",
+//   phoneId: "form__tel",
+//   cardId: "form__card",
+//   countryId: "country",
+//   giveId: "form__give",
+//   giveCurrentCurrencyId: "giveCurrentCurrency",
+//   giveNetworkCurrencyId: "giveNetworkCurrency",
+//   receiveCurrentCurrencyId: "receiveCurrentCurrency",
+//   errorMessage: "form__error",
+// });
