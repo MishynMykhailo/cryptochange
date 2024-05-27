@@ -13,6 +13,15 @@ const data = [
     ],
   },
   {
+    id: 22,
+    name: "BNB",
+    className: "bnb",
+    type: 0,
+    fromNotice: null,
+    currencies: [
+    ],
+  },
+  {
     id: 305,
     name: "Tether",
     className: "TetherNew",

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<link rel="icon" type="image/x-icon" href="tild3966-3061-4734-b264-323338383031__favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
     <title> Success </title>
     <style>
         .shadow {
@@ -104,7 +104,7 @@
 </head>
 
 <body>
-    <img class='shadow' src="images/back.png">
+    <img class='shadow' src="./images/back.png">
     <div class="title_block">
         <div class='text-block'>
             <p class="head-text">СПАСИБО ЗА <br /> ВАШУ ЗАЯВКУ!</p>
